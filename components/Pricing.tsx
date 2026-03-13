@@ -6,30 +6,16 @@ import Link from "next/link"
 
 const plans = [
   {
-    name: "Enterprise",
-    price: "1200",
+    name: "Starter",
+    price: "350",
     period: "/month",
     features: [
-      "All Services",
-      "Full Management for All Platforms",
-      "Everything",
-      "Advanced Reports",
-      "Dedicated Team + Consultations + Extra Services"
-    ],
-    moreFeatures: true
-  },
-  {
-    name: "Pro",
-    price: "800",
-    period: "/month",
-    recommended: true,
-    features: [
-      "15 custom designs",
-      "3 Reels + Motion",
-      "Facebook, Instagram, Tiktok & Google ads",
+      "6 custom designs",
+      "2 Reels",
+      "Facebook & Instagram ads",
       "Page management",
-      "Detailed Report + Guidelines",
-      "Advanced Reports"
+      "Performance reports",
+      "Extras"
     ]
   },
   {
@@ -46,17 +32,31 @@ const plans = [
     ]
   },
   {
-    name: "Starter",
-    price: "350",
+    name: "Pro",
+    price: "800",
+    period: "/month",
+    recommended: true,
+    features: [
+      "15 custom designs",
+      "3 Reels + Motion",
+      "Facebook, Instagram, Tiktok & Google ads",
+      "Page management",
+      "Detailed Report + Guidelines",
+      "Advanced Reports"
+    ]
+  },
+  {
+    name: "Enterprise",
+    price: "1200",
     period: "/month",
     features: [
-      "6 custom designs",
-      "2 Reels",
-      "Facebook & Instagram ads",
-      "Page management",
-      "Performance reports",
-      "Extras"
-    ]
+      "All Services",
+      "Full Management for All Platforms",
+      "Everything",
+      "Advanced Reports",
+      "Dedicated Team + Consultations + Extra Services"
+    ],
+    moreFeatures: true
   }
 ]
 
