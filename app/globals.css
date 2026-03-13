@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-accent: #ff4400;
+  --color-gray: #8a8a91;
+  --color-dark-gray: #333336;
+  --color-light-gray: #f6f6f6;
+  --color-silver: #c0c0c0;
+  --color-border: #e6e6e6;
+  --color-orange-secondary: rgb(250, 111, 69);
+  --color-dark-surface: rgb(17, 17, 18);
+  --color-dark-card: rgb(30, 43, 58);
+}
+
+@theme inline {
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-madani-arabic), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-madani-arabic), sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
