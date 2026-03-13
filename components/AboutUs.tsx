@@ -1,7 +1,28 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { useRef, useEffect } from "react";
+
+const AnimatedNumber = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const nodeRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(nodeRef, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, value, { duration: 2, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [isInView, count, value]);
+
+  return (
+    <div ref={nodeRef} className="text-6xl md:text-7xl font-bold mb-4 text-[#FF6B2E]">
+      <motion.span>{rounded}</motion.span>
+      {suffix}
+    </div>
+  );
+};
 
 const AboutUs = () => {
   const ref = useRef(null);
@@ -76,7 +97,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-shadow duration-300"
             >
-              <div className="text-6xl md:text-7xl font-bold mb-4 text-[#FF6B2E]">5+</div>
+              <AnimatedNumber value={5} suffix="+" />
               <div className="text-xl md:text-2xl font-semibold text-gray-900">Years of Experience</div>
             </motion.div>
 
@@ -87,7 +108,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-shadow duration-300"
             >
-              <div className="text-6xl md:text-7xl font-bold mb-4 text-[#FF6B2E]">20</div>
+              <AnimatedNumber value={20} />
               <div className="text-xl md:text-2xl font-semibold text-gray-900">Members Team</div>
             </motion.div>
 
@@ -98,7 +119,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-shadow duration-300"
             >
-              <div className="text-6xl md:text-7xl font-bold mb-4 text-[#FF6B2E]">150+</div>
+              <AnimatedNumber value={150} suffix="+" />
               <div className="text-xl md:text-2xl font-semibold text-gray-900">Clients Globally</div>
             </motion.div>
           </div>
@@ -247,7 +268,7 @@ const AboutUs = () => {
             Our Values
           </motion.h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -328,7 +349,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[#FF6B2E] hover:shadow-lg transition-all duration-300 text-center"
+              className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[#FF6B2E] hover:shadow-lg transition-all duration-300 text-center col-span-2 md:col-span-1"
             >
               <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
