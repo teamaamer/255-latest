@@ -124,7 +124,7 @@ export default function Pricing() {
                   )}
                 </ul>
 
-                <Link href="/contact" className="w-full bg-[#FF6B2E] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center block">
+                <Link href="#contact" className="w-full bg-[#FF6B2E] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center block">
                   Contact Sales
                 </Link>
               </div>
