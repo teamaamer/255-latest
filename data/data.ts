@@ -293,11 +293,6 @@ export const contactInfo = [
     phone: "+972 0544681684",
   },
   {
-    name: "255 Riyadh",
-    address: "Muruj District\nImam Saud bin Abdulaziz\nbin Mohammed Road\nRiyadh, Saudi Arabia",
-    phone: "+966 59 981 7490",
-  },
-  {
     name: "255 Houston",
     address: "Houston, Texas\nUnited States",
     phone: "+1 (424) 800-2025",

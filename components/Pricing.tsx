@@ -65,7 +65,7 @@ export default function Pricing() {
     <section id="pricing" className="py-32 px-6 md:px-12 bg-black">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-[#FF6B2E] text-4xl md:text-6xl font-bold mb-4">
+          <h2 className="text-[rgb(255,68,0)] text-4xl md:text-6xl font-bold mb-4">
             Social Media Management Packages
           </h2>
         </div>
@@ -82,12 +82,12 @@ export default function Pricing() {
               className="relative flex flex-col cursor-pointer"
             >
               {plan.recommended && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FF6B2E] text-white px-4 py-1 rounded-full text-xs font-medium z-10">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[rgb(255,68,0)] text-white px-4 py-1 rounded-full text-xs font-medium z-10">
                   Recommended
                 </div>
               )}
 
-              <div className="bg-[#FF6B2E] rounded-t-3xl px-6 py-4 text-center shadow-lg">
+              <div className="bg-[rgb(255,68,0)] rounded-t-3xl px-6 py-4 text-center shadow-lg">
                 <h3 className="text-white text-2xl font-bold">
                   {plan.name}
                 </h3>
@@ -97,7 +97,7 @@ export default function Pricing() {
                 <div className="mb-6">
                   <div className="text-gray-600 text-sm mb-1">From</div>
                   <div className="flex items-baseline justify-center">
-                    <span className="text-[#FF6B2E] text-5xl font-bold">
+                    <span className="text-[rgb(255,68,0)] text-5xl font-bold">
                       {plan.price}$
                     </span>
                     <span className="text-gray-600 text-lg ml-1">
@@ -109,7 +109,7 @@ export default function Pricing() {
                 <ul className="space-y-3 mb-6 flex-1">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#FF6B2E]" />
+                      <Check className="w-5 h-5 mt-0.5 flex-shrink-0 text-[rgb(255,68,0)]" />
                       <span className="text-gray-700 text-sm">
                         {feature}
                       </span>
@@ -117,14 +117,14 @@ export default function Pricing() {
                   ))}
                   {plan.moreFeatures && (
                     <li className="text-center">
-                      <span className="inline-block bg-[#FF6B2E] text-white text-xs px-3 py-1 rounded-full">
+                      <span className="inline-block bg-[rgb(255,68,0)] text-white text-xs px-3 py-1 rounded-full">
                         & Much More
                       </span>
                     </li>
                   )}
                 </ul>
 
-                <Link href="#contact" className="w-full bg-[#FF6B2E] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center block">
+                <Link href="#contact" className="w-full bg-[rgb(255,68,0)] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center block">
                   Contact Sales
                 </Link>
               </div>

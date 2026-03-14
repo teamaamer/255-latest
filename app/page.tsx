@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AboutUs from "@/components/AboutUs";
+import Stats from "@/components/Stats";
 import { clientsData } from "@/data/data";
 import fs from "fs";
 import path from "path";
@@ -47,6 +48,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <Stats />
       <LogoTicker />
       {/* <VideoBackgroundSection>
         <Intro />

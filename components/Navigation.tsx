@@ -120,11 +120,11 @@ export default function Navigation() {
           >
             <motion.span
               animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }}
-              className="w-6 h-0.5 bg-[var(--color-accent)] block"
+              className="w-6 h-0.5 bg-white block"
             />
             <motion.span
               animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }}
-              className="w-6 h-0.5 bg-[var(--color-accent)] block"
+              className="w-6 h-0.5 bg-white block"
             />
           </button>
         </div>
@@ -149,9 +149,9 @@ export default function Navigation() {
                 className="mb-4 md:mb-6 text-center"
               >
                 <h2 className="text-white text-sm md:text-base mb-2">
-                  We are based in <span className="text-[var(--color-accent)]">Milano</span> and work remotely.
+                  We are based in <span className="text-[var(--color-accent)]">California</span>
                 </h2>
-                <GlobalTime timezone="Europe/Rome" label="Milano" />
+                <GlobalTime timezone="America/Los_Angeles" label="California" />
               </motion.div>
 
               {/* Main Menu */}

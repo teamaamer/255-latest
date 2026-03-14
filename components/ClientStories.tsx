@@ -6,21 +6,21 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    quote: "255 transformed our brand identity completely. Their attention to detail and creative vision exceeded all expectations.",
-    author: "Sarah Johnson",
-    role: "CEO, TechVision",
+    quote: "This agency doesn't just run ads — they build real marketing strategies. They took the time to understand our business goals and created campaigns that delivered measurable results. Communication has been excellent, deadlines are always met, and their creativity stands out. We value them as a true partner in our growth.",
+    author: "KidsRus Learning Center",
+    role: "4 reviews · a week ago",
     image: "/images/AvA1cgyFsNBzB5fQS5lTHrLbWrc.jpg"
   },
   {
-    quote: "Working with 255 was a game-changer for our digital presence. They delivered beyond what we imagined.",
-    author: "Michael Chen",
-    role: "Founder, Innovate Labs",
+    quote: "Wish I've done this years ago, it's been 3 months only but our numbers has gone up significantly!! and still on going although it's Ramadan already!! Thanks guys 🙏🙏🙏",
+    author: "Hatim Qarmash",
+    role: "3 reviews · a week ago",
     image: "/images/H2vtO5AcqO3JQ9DLTNll2arrgiE.jpg"
   },
   {
-    quote: "The team's expertise in design and strategy helped us achieve remarkable growth in just six months.",
-    author: "Emma Williams",
-    role: "Marketing Director, Pulse",
+    quote: "Professional, creative, and consistent. Our social media has never looked better. Highly recommend!",
+    author: "Star Box Day Care",
+    role: "6 reviews · 1 photo · a week ago",
     image: "/images/kMKd9NTvf9O2me1pvCl9a31nIXc.jpg"
   }
 ]
