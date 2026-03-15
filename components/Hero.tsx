@@ -1,9 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image"
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 200], [1, 0]);
+  const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
+  const y = useTransform(scrollY, [0, 200], [0, -50]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -37,30 +42,30 @@ export default function Hero() {
             </h1>
           </motion.div>
 
-          {/* Agency Label */}
-          <motion.div
-            initial={{ opacity: 0.001, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, delay: 0.2, ease: [0.44, 0, 0.56, 1] }}
-            className="flex items-center gap-4"
-          >
-            <motion.img
-              src="/255-logo.svg"
-              alt="255 Agency"
-              className="h-8 md:h-10 w-auto brightness-0 invert"
-            />
-          </motion.div>
-
           {/* Subtitle */}
           <motion.div
             initial={{ opacity: 0.001, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
+            style={{ opacity, scale, y }}
             transition={{ duration: 1.5, delay: 0.3, ease: [0.44, 0, 0.56, 1] }}
-            className="mt-12"
+            className="mt-12 w-full"
           >
-            <h1 className="text-[var(--color-accent)] text-[clamp(4rem,12vw,14rem)] font-bold leading-none tracking-[0.05em] md:tracking-[0.08em] lg:tracking-[0.1em] w-full">
-              CREATIVITY
-            </h1>
+            <motion.img
+              src="/logobanner.png"
+              alt="Creativity Banner"
+              className="w-full h-auto max-w-[clamp(20rem,60vw,80rem)] mx-auto"
+              initial={{ scale: 2.5, opacity: 0, y: -50, rotate: -3 }}
+              animate={{ scale: 1, opacity: 1, y: 0, rotate: 0 }}
+              transition={{ 
+                duration: 1.8, 
+                delay: 0.6,
+                ease: [0.23, 1, 0.32, 1],
+                scale: { duration: 1.4, ease: [0.23, 1, 0.32, 1] },
+                opacity: { duration: 1.2, ease: [0.23, 1, 0.32, 1] },
+                y: { duration: 1.6, ease: [0.23, 1, 0.32, 1] },
+                rotate: { duration: 1.8, ease: [0.23, 1, 0.32, 1] }
+              }}
+            />
           </motion.div>
         </div>
       </div>

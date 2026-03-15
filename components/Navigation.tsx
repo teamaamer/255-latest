@@ -8,10 +8,17 @@ import GlobalTime from "@/components/GlobalTime"
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      const scrollY = window.scrollY
+      const windowHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight - windowHeight
+      const progress = Math.min(scrollY / documentHeight, 1)
+      
+      setIsScrolled(scrollY > 50)
+      setScrollProgress(progress)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -86,9 +93,9 @@ export default function Navigation() {
     <>
       {/* Navigation Bar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : ''}`}>
-        <div className="flex items-center justify-between">
-          {/* Social Links */}
-          <div className="hidden md:flex items-center gap-6">
+        <div className="flex items-center">
+          {/* Left Social Links */}
+          <div className="hidden md:flex items-center gap-6 flex-1">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
@@ -103,30 +110,45 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Center Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-            <img
-              src="/255-logo.svg"
-              alt="255 Agency"
-              className="h-6 md:h-8 w-auto brightness-0 invert"
-            />
-          </Link>
+          {/* Center Logo Banner */}
+          <div className="flex-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ 
+                opacity: isScrolled ? 1 : 0,
+                scale: isScrolled ? 1 : 0.8,
+                y: isScrolled ? 0 : 20
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="flex justify-center"
+            >
+              <Link href="/">
+                <img
+                  src="/logobanner.png"
+                  alt="Logo Banner"
+                  className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </Link>
+            </motion.div>
+          </div>
 
-          {/* Burger Menu */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="ml-auto w-12 h-12 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
-            aria-label="Toggle menu"
-          >
-            <motion.span
-              animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }}
-              className="w-6 h-0.5 bg-white block"
-            />
-            <motion.span
-              animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }}
-              className="w-6 h-0.5 bg-white block"
-            />
-          </button>
+          {/* Right Burger Menu */}
+          <div className="flex-1 flex justify-end">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              <motion.span
+                animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }}
+                className="w-6 h-0.5 bg-white block"
+              />
+              <motion.span
+                animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }}
+                className="w-6 h-0.5 bg-white block"
+              />
+            </button>
+          </div>
         </div>
       </nav>
 

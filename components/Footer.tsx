@@ -31,7 +31,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <h3 className="text-3xl font-bold mb-4">255</h3>
+            <img
+              src="/255-logo.svg"
+              alt="255 Logo"
+              className="h-8 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-white/60 max-w-md">
               A premium creative agency transforming brands through strategic design and digital innovation.
             </p>

@@ -6,13 +6,13 @@ import { useRef, useEffect } from "react";
 const AnimatedNumber = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
-  const nodeRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(nodeRef, { once: true });
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(nodeRef, { once: true, amount: 0.5 });
 
   useEffect(() => {
     if (isInView) {
-      const controls = animate(count, value, { duration: 2, ease: "easeOut" });
-      return controls.stop;
+      const controls = animate(count, value, { duration: 2.5, ease: "easeOut" });
+      return () => controls.stop();
     }
   }, [isInView, count, value]);
 
@@ -32,7 +32,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-20 px-6 md:px-12 bg-black">
+    <section className="py-20 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}

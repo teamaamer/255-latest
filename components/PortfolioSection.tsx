@@ -95,7 +95,7 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
   }, [currentIndex, isPaused, slides.length])
 
   return (
-    <section ref={ref} id="portfolio" className="py-32 px-6 md:px-12 bg-black">
+    <section ref={ref} id="portfolio" className="py-32 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto">
         {/* Header */}
         <div className="mb-20">

@@ -78,7 +78,7 @@ const AboutUs = () => {
           </p>
         </motion.div>
         {/* Our Approach */}
-        <div className="mb-32">
+        <div className="mb-32 -mx-6 md:-mx-12 px-6 md:px-12 py-16 bg-[#1a1a1a]">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white border-2 border-gray-100 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
+                className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 flex-shrink-0">
@@ -109,9 +109,9 @@ const AboutUs = () => {
                       <circle cx="32" cy="32" r="4" fill="#FFA366"/>
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Agile Methodology</h3>
+                  <h3 className="text-lg font-bold text-white">Agile Methodology</h3>
                 </div>
-                <p className="text-gray-700 text-sm md:text-base">Helping clients adapt to market trends and stay ahead digitally</p>
+                <p className="text-gray-300 text-sm md:text-base">Helping clients adapt to market trends and stay ahead digitally</p>
               </motion.div>
 
               {/* Data-Driven Insights */}
@@ -120,7 +120,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white border-2 border-gray-100 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
+                className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 flex-shrink-0">
@@ -132,9 +132,9 @@ const AboutUs = () => {
                       <path d="M18 24 L30 18 L42 14" stroke="#FFA366" strokeWidth="2" fill="none"/>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Data-Driven Insights</h3>
+                  <h3 className="text-xl font-bold text-white">Data-Driven Insights</h3>
                 </div>
-                <p className="text-gray-700 text-sm md:text-base">Blending sharp data insights with bold creative vision to ignite growth</p>
+                <p className="text-gray-300 text-sm md:text-base">Blending sharp data insights with bold creative vision to ignite growth</p>
               </motion.div>
 
               {/* Opportunity Focus */}
@@ -143,7 +143,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white border-2 border-gray-100 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
+                className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 flex-shrink-0">
@@ -157,9 +157,9 @@ const AboutUs = () => {
                       <circle cx="44" cy="20" r="3" fill="#FFA366"/>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Opportunity Focus</h3>
+                  <h3 className="text-xl font-bold text-white">Opportunity Focus</h3>
                 </div>
-                <p className="text-gray-700 text-sm md:text-base">Turning challenges into opportunities with tailored marketing experiences</p>
+                <p className="text-gray-300 text-sm md:text-base">Turning challenges into opportunities with tailored marketing experiences</p>
               </motion.div>
 
               {/* Targeted Precision */}
@@ -168,7 +168,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white border-2 border-gray-100 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
+                className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 flex-shrink-0">
@@ -183,9 +183,9 @@ const AboutUs = () => {
                       <path d="M44 32 L52 32" stroke="#FFA366" strokeWidth="2"/>
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">Targeted Precision</h3>
+                  <h3 className="text-lg font-bold text-white">Targeted Precision</h3>
                 </div>
-                <p className="text-gray-700 text-sm md:text-base">Connecting the right content to the right customer at the perfect time</p>
+                <p className="text-gray-300 text-sm md:text-base">Connecting the right content to the right customer at the perfect time</p>
               </motion.div>
             </div>
 
@@ -199,9 +199,9 @@ const AboutUs = () => {
             >
               <div className="relative w-full aspect-[4/3] max-h-[400px] rounded-2xl overflow-hidden">
                 <img 
-                  src="/approach-image.png" 
+                  src="/images/website-team-banner.avif" 
                   alt="Our Approach Visualization" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </motion.div>
