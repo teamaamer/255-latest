@@ -11,6 +11,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     message: ""
   })
@@ -28,7 +29,7 @@ export default function Contact() {
   }
 
   return (
-    <section ref={ref} id="contact" className="py-32 px-6 md:px-12 bg-[#1a1a1a]">
+    <section ref={ref} id="contact" className="py-8 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,19 +87,35 @@ export default function Contact() {
             </div>
           </div>
 
-          <div>
-            <label htmlFor="company" className="block text-white mb-2 text-sm">
-              Company
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[var(--color-accent)] transition-colors"
-              placeholder="Your company"
-            />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="phone" className="block text-white mb-2 text-sm">
+                Phone
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[var(--color-accent)] transition-colors"
+                placeholder="+1 (555) 000-0000"
+              />
+            </div>
+            <div>
+              <label htmlFor="company" className="block text-white mb-2 text-sm">
+                Company
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[var(--color-accent)] transition-colors"
+                placeholder="Your company"
+              />
+            </div>
           </div>
 
           <div>

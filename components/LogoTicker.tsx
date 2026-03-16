@@ -16,11 +16,12 @@ const clientLogos = [
   { src: "/logos4carousel/logoo.png", alt: "Client Logo", width: 120, height: 60 },
   { src: "/logos4carousel/nirlat_logo_en_1.png", alt: "Nirlat", width: 120, height: 60 },
   { src: "/logos4carousel/tambour_logos_1.png", alt: "Tambour", width: 120, height: 60 },
+  { src: "/logos4carousel/newlogoclient.png", alt: "Client Logo", width: 120, height: 60 },
 ]
 
 export default function LogoTicker({ title = "Trusted by leading brands", speed = 10 }: LogoTickerProps) {
   return (
-    <section aria-label="Logo Ticker" className="py-16 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
+    <section aria-label="Logo Ticker" className="py-8 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
       <div className="container mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +40,7 @@ export default function LogoTicker({ title = "Trusted by leading brands", speed 
 
           <div className="overflow-hidden">
             <motion.div
-              className="flex items-center gap-[120px] whitespace-nowrap"
+              className="flex items-center gap-[60px] whitespace-nowrap"
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: speed / 2, ease: "linear", repeat: Infinity }}
             >

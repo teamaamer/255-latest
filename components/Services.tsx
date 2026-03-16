@@ -20,7 +20,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} id="services" className="py-16 px-6 md:px-12 bg-white">
+    <section ref={ref} id="services" className="py-8 px-6 md:px-12 bg-white">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,18 +45,6 @@ export default function Services() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="border-t border-gray-200 pt-6"
             >
-              {/* Large Image Above */}
-              {service.image && (
-                <div className="relative w-full aspect-square mb-4">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              )}
-              
               {/* Title with Icon */}
               <div className="flex items-center gap-3 mb-3">
                 {service.icon && iconMap[service.icon] && (

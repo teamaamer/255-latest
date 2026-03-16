@@ -32,7 +32,6 @@ export default function Navigation() {
     { label: "Portfolio", href: "/#portfolio" },
     { label: "Team", href: "/#team" },
     { label: "Pricing", href: "/#pricing" },
-    { label: "FAQ", href: "/#faq" },
     { label: "Contact", href: "/#contact" },
   ]
 
@@ -148,16 +147,16 @@ export default function Navigation() {
           <div className="flex-1 flex justify-end">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="w-12 h-12 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
+              className="w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center gap-2.5 cursor-pointer"
               aria-label="Toggle menu"
             >
               <motion.span
-                animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }}
-                className="w-6 h-0.5 bg-white block"
+                animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 10 : 0 }}
+                className="w-10 md:w-12 h-1 bg-white block"
               />
               <motion.span
-                animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }}
-                className="w-6 h-0.5 bg-white block"
+                animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -10 : 0 }}
+                className="w-10 md:w-12 h-1 bg-white block"
               />
             </button>
           </div>

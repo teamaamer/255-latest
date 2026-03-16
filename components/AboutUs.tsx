@@ -29,7 +29,7 @@ const AboutUs = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} id="about" className="py-32 px-6 md:px-12 bg-white">
+    <section ref={ref} id="about" className="py-8 px-6 md:px-12 bg-white">
       <style jsx>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -78,7 +78,19 @@ const AboutUs = () => {
           </p>
         </motion.div>
         {/* Our Approach */}
-        <div className="mb-32 -mx-6 md:-mx-12 px-6 md:px-12 py-16 bg-[#1a1a1a]">
+        <div className="mb-16 -mx-6 md:-mx-12 px-6 md:px-12 py-16 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/images/website-team-banner.avif" 
+              alt="Team Background" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/70" />
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -188,23 +200,7 @@ const AboutUs = () => {
                 <p className="text-gray-300 text-sm md:text-base">Connecting the right content to the right customer at the perfect time</p>
               </motion.div>
             </div>
-
-            {/* Right Side - Approach Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="w-full lg:w-1/2"
-            >
-              <div className="relative w-full aspect-[4/3] max-h-[400px] rounded-2xl overflow-hidden">
-                <img 
-                  src="/images/website-team-banner.avif" 
-                  alt="Our Approach Visualization" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
+          </div>
           </div>
         </div>
 

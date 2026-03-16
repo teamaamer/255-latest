@@ -95,7 +95,7 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
   }, [currentIndex, isPaused, slides.length])
 
   return (
-    <section ref={ref} id="portfolio" className="py-32 px-6 md:px-12 bg-[#1a1a1a]">
+    <section ref={ref} id="portfolio" className="py-8 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto">
         {/* Header */}
         <div className="mb-20">
@@ -273,7 +273,7 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
         {/* View Full Portfolio Button */}
         <div className="flex justify-center mt-12">
           <Link
-            href="/portfolio"
+            href="/portfolio-viewer"
             className="inline-flex items-center gap-2 bg-white hover:bg-white/90 text-black px-8 py-4 rounded-lg font-bold text-lg transition-colors group"
           >
             View Full Portfolio

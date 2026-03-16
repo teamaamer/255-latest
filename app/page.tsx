@@ -9,7 +9,7 @@ import OurClients from "@/components/OurClients";
 import Team from "@/components/Team";
 import Pricing from "@/components/Pricing";
 import ClientStories from "@/components/ClientStories";
-import FAQ from "@/components/FAQ";
+import VideoShowcase from "@/components/VideoShowcase";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AboutUs from "@/components/AboutUs";
@@ -61,7 +61,7 @@ export default async function Home() {
       <Team />
       <Pricing />
       <ClientStories />
-      <FAQ />
+      <VideoShowcase />
       <Contact />
       <Footer />
     </main>

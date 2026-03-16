@@ -30,7 +30,7 @@ export default function ClientStories() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} id="client-stories" className="py-32 px-6 md:px-12 bg-[var(--color-light-gray)]">
+    <section ref={ref} id="client-stories" className="py-8 px-6 md:px-12 bg-[var(--color-light-gray)]">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
