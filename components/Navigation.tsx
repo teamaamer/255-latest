@@ -29,7 +29,7 @@ export default function Navigation() {
     { label: "Hero", href: "/#hero" },
     { label: "Services", href: "/#services" },
     { label: "About Us", href: "/#about" },
-    { label: "Portfolio", href: "/#portfolio" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Team", href: "/#team" },
     { label: "Pricing", href: "/#pricing" },
     { label: "Contact", href: "/#contact" },
@@ -103,7 +103,7 @@ export default function Navigation() {
   return (
     <>
       {/* Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : ''}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-0.5 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : ''}`}>
         <div className="flex items-center">
           {/* Left Social Links */}
           <div className="hidden md:flex items-center gap-6 flex-1">
@@ -122,7 +122,29 @@ export default function Navigation() {
           </div>
 
           {/* Center Logo Banner */}
-          <div className="flex-auto">
+          <div className="flex-auto relative">
+            {/* Logo Banner - Shows when NOT scrolled */}
+            <motion.div
+              initial={{ opacity: 1, scale: 1 }}
+              animate={{ 
+                opacity: isScrolled ? 0 : 1,
+                scale: isScrolled ? 0.8 : 1,
+                y: isScrolled ? -20 : 0
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="flex justify-center"
+              style={{ display: isScrolled ? 'none' : 'flex' }}
+            >
+              <Link href="/">
+                <img
+                  src="/logobanner.png?v=2"
+                  alt="Logo Banner"
+                  className="h-5 md:h-6 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </Link>
+            </motion.div>
+
+            {/* 255 Logo - Shows when scrolled */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ 
@@ -131,13 +153,14 @@ export default function Navigation() {
                 y: isScrolled ? 0 : 20
               }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="flex justify-center"
+              className="flex justify-center absolute inset-0"
+              style={{ display: isScrolled ? 'flex' : 'none' }}
             >
               <Link href="/">
                 <img
-                  src="/logobanner.png"
-                  alt="Logo Banner"
-                  className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                  src="/255-logo.svg?v=2"
+                  alt="255 Agency Logo"
+                  className="h-5 md:h-6 w-auto cursor-pointer hover:opacity-80 transition-opacity"
                 />
               </Link>
             </motion.div>

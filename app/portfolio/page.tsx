@@ -7,14 +7,29 @@ export default function PortfolioPage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="min-h-[60vh] flex items-end bg-black px-6 md:px-12 pb-20 pt-32">
+      <section className="min-h-[40vh] flex items-end bg-black px-6 md:px-12 pb-12 pt-24">
         <div className="container mx-auto">
-          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
-            Our Portfolio
-          </h1>
-          <p className="text-white/60 text-xl max-w-2xl">
-            Explore our selected works and the brands we've helped transform through strategic design and creative excellence.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
+                Our Portfolio
+              </h1>
+              <p className="text-white/60 text-xl max-w-2xl">
+                Explore our selected works and the brands we've helped transform through strategic design and creative excellence.
+              </p>
+            </div>
+            
+            {/* Company Profile Button */}
+            <Link
+              href="/portfolio-viewer"
+              className="inline-flex items-center gap-2 bg-[var(--color-accent)] hover:bg-[#ff5515] text-white px-6 py-3 rounded-full font-bold transition-colors whitespace-nowrap"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Company Profile
+            </Link>
+          </div>
         </div>
       </section>
 

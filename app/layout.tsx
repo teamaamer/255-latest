@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navigation from "@/components/Navigation";
 import Preloader from "@/components/Preloader";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const madaniArabic = localFont({
   src: [
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Preloader />
         <SmoothScroll />
         <Navigation />
+        <WhatsAppFloat />
         {children}
       </body>
     </html>

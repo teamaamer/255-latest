@@ -2,12 +2,21 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
 export default function Hero() {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 200], [1, 0]);
   const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
   const y = useTransform(scrollY, [0, 200], [0, -50]);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = scrollY.on("change", (latest) => {
+      setIsScrolled(latest > 100);
+    });
+    return () => unsubscribe();
+  }, [scrollY]);
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -28,46 +37,72 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-12">
-        <div className="max-w-4xl">
-          {/* Headline */}
-          <motion.div
-            initial={{ opacity: 0.001, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: [0.44, 0, 0.56, 1] }}
-          >
-            <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
-              Creative solutions<br />
-              that inspire and engage.
-            </h1>
-          </motion.div>
-
-          {/* Subtitle */}
-          <motion.div
-            initial={{ opacity: 0.001, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            style={{ opacity, scale, y }}
-            transition={{ duration: 1.5, delay: 0.3, ease: [0.44, 0, 0.56, 1] }}
-            className="mt-12 w-full"
-          >
-            <motion.img
-              src="/logobanner.png"
-              alt="Creativity Banner"
-              className="w-full h-auto max-w-[clamp(20rem,60vw,80rem)] mx-auto"
-              initial={{ scale: 2.5, opacity: 0, y: -50, rotate: -3 }}
-              animate={{ scale: 1, opacity: 1, y: 0, rotate: 0 }}
-              transition={{ 
-                duration: 1.8, 
-                delay: 0.6,
-                ease: [0.23, 1, 0.32, 1],
-                scale: { duration: 1.4, ease: [0.23, 1, 0.32, 1] },
-                opacity: { duration: 1.2, ease: [0.23, 1, 0.32, 1] },
-                y: { duration: 1.6, ease: [0.23, 1, 0.32, 1] },
-                rotate: { duration: 1.8, ease: [0.23, 1, 0.32, 1] }
-              }}
-            />
-          </motion.div>
+      <div className="relative z-10 w-full h-full flex flex-col justify-between">
+        <div className="container mx-auto px-6 md:px-12 pt-12">
+          <div className="max-w-4xl">
+            {/* Headline */}
+            <motion.div
+              initial={{ opacity: 0.001, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, ease: [0.44, 0, 0.56, 1] }}
+            >
+              <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
+                Creative solutions<br />
+                that inspire and engage.
+              </h1>
+            </motion.div>
+          </div>
         </div>
+
+        {/* Banner Logo - Bottom of Hero */}
+        <motion.div
+          initial={{ opacity: 0.001, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          style={{ opacity, scale }}
+          transition={{ duration: 1.5, delay: 0.3, ease: [0.44, 0, 0.56, 1] }}
+          className="w-full flex justify-center items-end -mb-40 md:-mb-52"
+        >
+          {/* Banner Logo - Shows initially */}
+          <motion.img
+            src="/logobanner.png"
+            alt="Creativity Banner"
+            className="w-full h-auto max-w-[clamp(20rem,60vw,80rem)]"
+            initial={{ scale: 2.5, opacity: 0, y: -50, rotate: -3 }}
+            animate={{ 
+              scale: 1, 
+              opacity: isScrolled ? 0 : 1, 
+              y: 0, 
+              rotate: 0 
+            }}
+            transition={{ 
+              duration: 1.8, 
+              delay: 0.6,
+              ease: [0.23, 1, 0.32, 1],
+              scale: { duration: 1.4, ease: [0.23, 1, 0.32, 1] },
+              opacity: { duration: 0.5, ease: [0.23, 1, 0.32, 1] },
+              y: { duration: 1.6, ease: [0.23, 1, 0.32, 1] },
+              rotate: { duration: 1.8, ease: [0.23, 1, 0.32, 1] }
+            }}
+            style={{ display: isScrolled ? 'none' : 'block' }}
+          />
+          
+          {/* 255 Logo - Shows when scrolled */}
+          <motion.img
+            src="/255-logo.svg"
+            alt="255 Agency Logo"
+            className="w-full h-auto max-w-[clamp(15rem,40vw,50rem)] absolute"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ 
+              opacity: isScrolled ? 1 : 0,
+              scale: isScrolled ? 1 : 0.8
+            }}
+            transition={{ 
+              duration: 0.5,
+              ease: [0.23, 1, 0.32, 1]
+            }}
+            style={{ display: isScrolled ? 'block' : 'none' }}
+          />
+        </motion.div>
       </div>
 
       {/* Decorative Plus Elements */}
