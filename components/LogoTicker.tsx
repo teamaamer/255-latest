@@ -20,22 +20,22 @@ const clientLogos = [
 
 export default function LogoTicker({ title = "Trusted by leading brands", speed = 10 }: LogoTickerProps) {
   return (
-    <section aria-label="Logo Ticker" className="py-16 px-6 md:px-12 bg-white overflow-hidden">
+    <section aria-label="Logo Ticker" className="py-16 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
       <div className="container mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-[var(--color-border)] text-sm font-medium uppercase tracking-wider mb-10"
+          className="text-center text-white/60 text-sm font-medium uppercase tracking-wider mb-10"
         >
           {title}
         </motion.p>
 
         <div className="relative">
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-[20%] bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-[20%] bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-[20%] bg-gradient-to-r from-[#1a1a1a] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-[20%] bg-gradient-to-l from-[#1a1a1a] to-transparent z-10 pointer-events-none" />
 
           <div className="overflow-hidden">
             <motion.div
