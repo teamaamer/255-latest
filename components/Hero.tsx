@@ -10,7 +10,7 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, 200], [0, -50]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <motion.div
         initial={{ scale: 1.6, filter: "brightness(0.9)" }}

@@ -32,7 +32,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-20 px-6 md:px-12 bg-[#1a1a1a]">
+    <section id="stats" className="py-20 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
