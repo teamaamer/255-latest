@@ -17,7 +17,11 @@ const AnimatedNumber = ({ value, suffix = "" }: { value: number; suffix?: string
   }, [isInView, count, value]);
 
   return (
-    <span ref={nodeRef} className="text-6xl md:text-7xl lg:text-8xl font-bold text-white">
+    <span 
+      ref={nodeRef}
+      className="text-[50px] md:text-[60px] lg:text-[70px] font-[800] text-white leading-[0.9]"
+      style={{ letterSpacing: '-2px', fontFamily: 'Inter, system-ui, sans-serif' }}
+    >
       <motion.span>{rounded}</motion.span>
       {suffix}
     </span>
@@ -25,21 +29,23 @@ const AnimatedNumber = ({ value, suffix = "" }: { value: number; suffix?: string
 };
 
 const stats = [
+  { value: 67, suffix: "", label: "PROJECTS\nCOMPLETED" },
+  { value: 19, suffix: "", label: "MEMBERS\nTEAM" },
+  { value: 3, suffix: "", label: "COLOURS NOT USED\nIN 2025" },
   { value: 5, suffix: "+", label: "YEARS OF\nEXPERIENCE" },
-  { value: 20, suffix: "", label: "MEMBERS\nTEAM" },
   { value: 150, suffix: "+", label: "CLIENTS\nGLOBALLY" }
 ];
 
 export default function Stats() {
   return (
-    <section id="stats" className="py-8 px-6 md:px-12 bg-[#1a1a1a]">
+    <section id="stats" className="py-4 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-white text-sm tracking-widest text-center mb-12"
+          className="text-white text-sm tracking-widest text-center mb-6"
         >
           PERFORMANCE SNAPSHOT
         </motion.h3>
@@ -54,7 +60,10 @@ export default function Stats() {
               viewport={{ once: true }}
               className="flex-1 text-center py-8 md:py-0 md:px-8 lg:px-16"
             >
-              <div className="text-xs md:text-sm text-white/60 tracking-wider mb-4 whitespace-pre-line uppercase">
+              <div 
+                className="text-[10px] md:text-[12px] text-white/60 mb-4 whitespace-pre-line uppercase font-[400]"
+                style={{ letterSpacing: '2px', fontFamily: 'Inter, system-ui, sans-serif' }}
+              >
                 {stat.label}
               </div>
               <AnimatedNumber value={stat.value} suffix={stat.suffix} />

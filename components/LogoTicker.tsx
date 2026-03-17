@@ -10,25 +10,25 @@ interface LogoTickerProps {
 }
 
 const clientLogos = [
-  { src: "/logos4carousel/THE BOULEVARD logo 1.png", alt: "The Boulevard", width: 120, height: 60 },
-  { src: "/logos4carousel/logo (3).png", alt: "Client Logo", width: 120, height: 60 },
-  { src: "/logos4carousel/logo -01.png", alt: "Client Logo", width: 120, height: 60 },
-  { src: "/logos4carousel/logoo.png", alt: "Client Logo", width: 120, height: 60 },
-  { src: "/logos4carousel/nirlat_logo_en_1.png", alt: "Nirlat", width: 120, height: 60 },
-  { src: "/logos4carousel/tambour_logos_1.png", alt: "Tambour", width: 120, height: 60 },
-  { src: "/logos4carousel/newlogoclient.png", alt: "Client Logo", width: 120, height: 60 },
+  { src: "/logos4carousel/THE BOULEVARD logo 1.png", alt: "The Boulevard", width: 80, height: 40 },
+  { src: "/logos4carousel/logo (3).png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/logo -01.png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/logoo.png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/nirlat_logo_en_1.png", alt: "Nirlat", width: 80, height: 40 },
+  { src: "/logos4carousel/tambour_logos_1.png", alt: "Tambour", width: 80, height: 40 },
+  { src: "/logos4carousel/newlogoclient.png", alt: "Client Logo", width: 80, height: 40 },
 ]
 
 export default function LogoTicker({ title = "Trusted by leading brands", speed = 10 }: LogoTickerProps) {
   return (
-    <section aria-label="Logo Ticker" className="py-8 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
+    <section aria-label="Logo Ticker" className="py-4 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
       <div className="container mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-white/60 text-sm font-medium uppercase tracking-wider mb-10"
+          className="text-center text-white/60 text-sm font-medium uppercase tracking-wider mb-6"
         >
           {title}
         </motion.p>

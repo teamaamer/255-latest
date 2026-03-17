@@ -19,7 +19,7 @@ export default function Hero() {
   }, [scrollY]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <motion.div
         initial={{ scale: 1.6, filter: "brightness(0.9)" }}
@@ -37,8 +37,8 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 w-full h-full flex flex-col justify-between">
-        <div className="container mx-auto px-6 md:px-12 pt-12">
+      <div className="relative z-10 w-full h-full flex items-center">
+        <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl">
             {/* Headline */}
             <motion.div
@@ -54,24 +54,23 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Banner Logo - Bottom of Hero */}
+        {/* Banner Logo - Absolute Bottom */}
         <motion.div
-          initial={{ opacity: 0.001, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0.001 }}
+          animate={{ opacity: 1 }}
           style={{ opacity, scale }}
           transition={{ duration: 1.5, delay: 0.3, ease: [0.44, 0, 0.56, 1] }}
-          className="w-full flex justify-center items-end -mb-40 md:-mb-52"
+          className="absolute bottom-0 left-[20%] -translate-x-1/2 translate-y-1/2 z-20"
         >
           {/* Banner Logo - Shows initially */}
           <motion.img
             src="/logobanner.png"
             alt="Creativity Banner"
-            className="w-full h-auto max-w-[clamp(20rem,60vw,80rem)]"
-            initial={{ scale: 2.5, opacity: 0, y: -50, rotate: -3 }}
+            className="h-auto max-w-[clamp(20rem,60vw,80rem)]"
+            initial={{ scale: 2.5, opacity: 0, rotate: -3 }}
             animate={{ 
               scale: 1, 
               opacity: isScrolled ? 0 : 1, 
-              y: 0, 
               rotate: 0 
             }}
             transition={{ 
@@ -80,7 +79,6 @@ export default function Hero() {
               ease: [0.23, 1, 0.32, 1],
               scale: { duration: 1.4, ease: [0.23, 1, 0.32, 1] },
               opacity: { duration: 0.5, ease: [0.23, 1, 0.32, 1] },
-              y: { duration: 1.6, ease: [0.23, 1, 0.32, 1] },
               rotate: { duration: 1.8, ease: [0.23, 1, 0.32, 1] }
             }}
             style={{ display: isScrolled ? 'none' : 'block' }}
@@ -90,7 +88,7 @@ export default function Hero() {
           <motion.img
             src="/255-logo.svg"
             alt="255 Agency Logo"
-            className="w-full h-auto max-w-[clamp(15rem,40vw,50rem)] absolute"
+            className="h-auto max-w-[clamp(15rem,40vw,50rem)] absolute top-0 left-0"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ 
               opacity: isScrolled ? 1 : 0,
