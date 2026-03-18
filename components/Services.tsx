@@ -26,12 +26,12 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="mb-10"
+          className="mb-10 text-center"
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
+          <h2 className="text-5xl md:text-7xl font-bold mb-6 text-[#ff5a1f]">
             Our Services
           </h2>
-          <p className="text-[var(--color-gray)] text-xl max-w-2xl">
+          <p className="text-[var(--color-gray)] text-xl max-w-2xl mx-auto">
             Capture, communicate, and connect. We create impactful content that conveys your brand's message and resonates with your audience.
           </p>
         </motion.div>

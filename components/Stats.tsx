@@ -29,11 +29,11 @@ const AnimatedNumber = ({ value, suffix = "" }: { value: number; suffix?: string
 };
 
 const stats = [
-  { value: 67, suffix: "", label: "PROJECTS\nCOMPLETED" },
-  { value: 19, suffix: "", label: "MEMBERS\nTEAM" },
-  { value: 3, suffix: "", label: "COLOURS NOT USED\nIN 2025" },
-  { value: 5, suffix: "+", label: "YEARS OF\nEXPERIENCE" },
-  { value: 150, suffix: "+", label: "CLIENTS\nGLOBALLY" }
+  { value: 7680, suffix: "", label: "PROJECTS\nCOMPLETED" },
+  { value: 28, suffix: "", label: "TEAM\nMEMBERS" },
+  { value: 40000, suffix: "+", label: "CAMPAIGNS\nLAUNCHED" },
+  { value: 8, suffix: "+", label: "YEARS OF\nEXPERIENCE" },
+  { value: 255, suffix: "+", label: "CLIENTS\nGLOBALLY" }
 ];
 
 export default function Stats() {

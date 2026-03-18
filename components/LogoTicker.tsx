@@ -11,12 +11,19 @@ interface LogoTickerProps {
 
 const clientLogos = [
   { src: "/logos4carousel/THE BOULEVARD logo 1.png", alt: "The Boulevard", width: 80, height: 40 },
-  { src: "/logos4carousel/logo (3).png", alt: "Client Logo", width: 80, height: 40 },
-  { src: "/logos4carousel/logo -01.png", alt: "Client Logo", width: 80, height: 40 },
-  { src: "/logos4carousel/logoo.png", alt: "Client Logo", width: 80, height: 40 },
   { src: "/logos4carousel/nirlat_logo_en_1.png", alt: "Nirlat", width: 80, height: 40 },
-  { src: "/logos4carousel/tambour_logos_1.png", alt: "Tambour", width: 80, height: 40 },
+  { src: "/logos4carousel/logo -01.png", alt: "Client Logo", width: 80, height: 40 },
   { src: "/logos4carousel/newlogoclient.png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/13131 (1).png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/1948 logo transparent-01.png", alt: "1948", width: 80, height: 40 },
+  { src: "/logos4carousel/Vector Smart Object-01.png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/abood colored.png", alt: "Abood", width: 80, height: 40 },
+  { src: "/logos4carousel/abu seir business card-06.png", alt: "Abu Seir", width: 80, height: 40 },
+  { src: "/logos4carousel/image.png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/png logo.png", alt: "Client Logo", width: 80, height: 40 },
+  { src: "/logos4carousel/salahat-01.png", alt: "Salahat", width: 80, height: 40 },
+  { src: "/logos4carousel/sherlock pizza branding-04.png", alt: "Sherlock Pizza", width: 80, height: 40 },
+  { src: "/logos4carousel/sun-logo-white.png", alt: "Sun", width: 80, height: 40 },
 ]
 
 export default function LogoTicker({ title = "Trusted by leading brands", speed = 10 }: LogoTickerProps) {
