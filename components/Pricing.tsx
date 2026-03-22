@@ -86,11 +86,11 @@ export default function Pricing() {
                 </div>
               )}
 
-              {/* Orange Rounded Button for Plan Name */}
-              <div className="bg-[rgb(255,68,0)] rounded-full px-6 py-3 text-center mb-4">
-                <h3 className="text-white text-xl font-bold">
+              {/* Plan Name Label - Badge Style */}
+              <div className="text-center mb-4">
+                <span className="inline-block bg-white text-black text-xl font-bold px-8 py-2 rounded-lg">
                   {plan.name}
-                </h3>
+                </span>
               </div>
 
               {/* Price - Horizontal Layout */}
@@ -136,6 +136,19 @@ export default function Pricing() {
               </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* View All Plans Button */}
+        <div className="flex justify-center mt-12">
+          <Link
+            href="/pricing"
+            className="inline-flex items-center gap-2 bg-white hover:bg-white/90 text-black px-8 py-4 rounded-lg font-bold text-lg transition-colors group"
+          >
+            View All Plans & Compare
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

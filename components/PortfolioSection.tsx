@@ -273,7 +273,7 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
         {/* View Full Portfolio Button */}
         <div className="flex justify-center mt-12">
           <Link
-            href="/portfolio-viewer"
+            href="/portfolio"
             className="inline-flex items-center gap-2 bg-white hover:bg-white/90 text-black px-8 py-4 rounded-lg font-bold text-lg transition-colors group"
           >
             View Full Portfolio

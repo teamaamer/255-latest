@@ -65,14 +65,27 @@ export default function Team() {
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-5 text-white">
                 <h3 className="text-2xl font-bold mb-1">{ceo.name}</h3>
                 <p className="text-base mb-2">{ceo.role}</p>
-                <a 
-                  href="https://www.facebook.com/share/r/17hm7tDnPw/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-xs underline hover:text-[var(--color-accent)] transition-colors inline-block"
-                >
-                  Watch Video
-                </a>
+                <div className="flex items-center gap-3">
+                  {ceo.linkedin && (
+                    <a
+                      href={ceo.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs hover:text-[var(--color-accent)] transition-colors"
+                    >
+                      <Linkedin size={14} />
+                      <span>LinkedIn</span>
+                    </a>
+                  )}
+                  <a 
+                    href="https://www.facebook.com/share/r/17hm7tDnPw/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-xs underline hover:text-[var(--color-accent)] transition-colors inline-block"
+                  >
+                    Watch Video
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -110,9 +123,20 @@ export default function Team() {
                         />
                       )}
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h4 className="font-bold text-gray-900">{member.name}</h4>
                       <p className="text-sm text-gray-600">{member.role}</p>
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs text-gray-600 hover:text-[var(--color-accent)] transition-colors duration-300 mt-1"
+                        >
+                          <Linkedin size={12} />
+                          <span>LinkedIn</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                   
@@ -181,17 +205,17 @@ export default function Team() {
           </motion.div>
 
           {/* Team Grid - Mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-3 md:gap-6">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-5 border border-gray-100"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 md:p-5 border border-gray-100"
               >
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0 ring-2 ring-white shadow-md">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0 ring-2 ring-white shadow-md">
                     {member.image && (
                       <Image
                         src={member.image}
@@ -201,9 +225,9 @@ export default function Team() {
                       />
                     )}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-lg font-bold mb-1">{member.name}</h4>
-                    <p className="text-[var(--color-accent)] text-sm font-medium">{member.role}</p>
+                  <div className="flex-1 min-w-0 text-center sm:text-left">
+                    <h4 className="text-sm sm:text-lg font-bold mb-1 truncate">{member.name}</h4>
+                    <p className="text-[var(--color-accent)] text-xs sm:text-sm font-medium truncate">{member.role}</p>
                   </div>
                 </div>
                 {member.linkedin && (
