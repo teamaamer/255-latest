@@ -55,8 +55,8 @@ export default async function Home() {
         <ScrollingImages />
       </VideoBackgroundSection> */}
       {/* <OurClients /> */}
-      <Services />
       <AboutUs />
+      <Services />
       <PortfolioSection slides={portfolioSlides} />
       <Team />
       <Pricing />

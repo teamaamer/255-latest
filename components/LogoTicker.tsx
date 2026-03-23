@@ -17,25 +17,23 @@ const clientLogos = [
   { src: "/logos4carousel/13131 (1).png", alt: "Client Logo", width: 80, height: 40 },
   { src: "/logos4carousel/1948 logo transparent-01.png", alt: "1948", width: 80, height: 40 },
   { src: "/logos4carousel/Vector Smart Object-01.png", alt: "Client Logo", width: 80, height: 40 },
-  { src: "/logos4carousel/abood colored.png", alt: "Abood", width: 80, height: 40 },
-  { src: "/logos4carousel/abu seir business card-06.png", alt: "Abu Seir", width: 80, height: 40 },
+  { src: "/logos4carousel/abu seir business card-06.png", alt: "Abu Seir", width: 60, height: 30 },
   { src: "/logos4carousel/image.png", alt: "Client Logo", width: 80, height: 40 },
   { src: "/logos4carousel/png logo.png", alt: "Client Logo", width: 80, height: 40 },
   { src: "/logos4carousel/salahat-01.png", alt: "Salahat", width: 80, height: 40 },
-  { src: "/logos4carousel/sherlock pizza branding-04.png", alt: "Sherlock Pizza", width: 80, height: 40 },
   { src: "/logos4carousel/sun-logo-white.png", alt: "Sun", width: 80, height: 40 },
 ]
 
 export default function LogoTicker({ title = "Trusted by leading brands", speed = 10 }: LogoTickerProps) {
   return (
-    <section aria-label="Logo Ticker" className="py-4 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
+    <section aria-label="Logo Ticker" className="py-2 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
       <div className="container mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-white/60 text-sm font-medium uppercase tracking-wider mb-6"
+          className="text-center text-white/60 text-[10px] md:text-xs font-medium uppercase tracking-wider mb-3"
         >
           {title}
         </motion.p>

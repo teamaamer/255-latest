@@ -94,7 +94,7 @@ export default function Navigation() {
     <>
       {/* Navigation Bar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-0.5 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : ''}`}>
-        <div className="flex items-center justify-between md:justify-start">
+        <div className="flex items-center">
           {/* Left Social Links */}
           <div className="hidden md:flex items-center gap-6 flex-1">
             {socialLinks.map((link) => (
@@ -112,29 +112,21 @@ export default function Navigation() {
           </div>
 
           {/* Center Logo Banner */}
-          <div className="absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0 md:flex-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ 
-                opacity: isScrolled ? 1 : 0,
-                scale: isScrolled ? 1 : 0.8,
-                y: isScrolled ? 0 : 20
-              }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="flex justify-center"
-            >
+          <div className="flex-auto relative">
+            {/* 255 Logo - Always visible */}
+            <div className="flex justify-center">
               <Link href="/">
                 <img
-                  src="/logobanner.png"
-                  alt="Logo Banner"
-                  className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                  src="/255-logo.svg?v=3"
+                  alt="255 Agency Logo"
+                  className="h-5 md:h-6 w-auto cursor-pointer hover:opacity-80 transition-opacity"
                 />
               </Link>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Burger Menu */}
-          <div className="md:flex-1 flex justify-end">
+          <div className="flex-1 flex justify-end">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="w-20 h-20 md:w-24 md:h-24 flex flex-col items-center justify-center gap-2.5 cursor-pointer"

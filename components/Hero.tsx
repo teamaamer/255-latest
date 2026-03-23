@@ -8,12 +8,17 @@ export default function Hero() {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 200], [1, 0]);
   const scale = useTransform(scrollY, [0, 200], [1, 0.8]);
-  const y = useTransform(scrollY, [0, 200], [0, -50]);
+  
+  // Logo position transforms - moves from bottom to top center
+  const logoY = useTransform(scrollY, [0, 300], [0, -600]);
+  const logoX = useTransform(scrollY, [0, 300], [0, 30]); // Moves from left (20%) to center (50%)
+  const logoScale = useTransform(scrollY, [0, 300], [1, 0.4]); // Shrinks as it moves up
+  
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const unsubscribe = scrollY.on("change", (latest) => {
-      setIsScrolled(latest > 100);
+      setIsScrolled(latest > 200);
     });
     return () => unsubscribe();
   }, [scrollY]);
@@ -37,8 +42,8 @@ export default function Hero() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 w-full h-full flex flex-col">
-        <div className="container mx-auto px-6 md:px-12 pt-40 md:pt-48">
+      <div className="relative z-10 w-full h-full flex items-center">
+        <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl">
             {/* Headline */}
             <motion.div
@@ -52,38 +57,52 @@ export default function Hero() {
               </h1>
             </motion.div>
           </div>
-
-          {/* Banner Logo - Below Headline */}
-          <motion.div
-            initial={{ opacity: 0.001 }}
-            animate={{ opacity: 1 }}
-            style={{ opacity, scale }}
-            transition={{ duration: 1.5, delay: 0.3, ease: [0.44, 0, 0.56, 1] }}
-            className="mt-8"
-          >
-            {/* Banner Logo - Shows initially */}
-            <motion.img
-              src="/logobanner.png"
-              alt="Creativity Banner"
-              className="h-auto w-full max-w-[90vw] md:max-w-[clamp(15rem,50vw,60rem)]"
-              initial={{ scale: 2.5, opacity: 0, rotate: -3 }}
-              animate={{ 
-                scale: 1, 
-                opacity: isScrolled ? 0 : 1, 
-                rotate: 0 
-              }}
-              transition={{ 
-                duration: 1.8, 
-                delay: 0.6,
-                ease: [0.23, 1, 0.32, 1],
-                scale: { duration: 1.4, ease: [0.23, 1, 0.32, 1] },
-                opacity: { duration: 0.5, ease: [0.23, 1, 0.32, 1] },
-                rotate: { duration: 1.8, ease: [0.23, 1, 0.32, 1] }
-              }}
-              style={{ display: isScrolled ? 'none' : 'block' }}
-            />
-          </motion.div>
         </div>
+
+        {/* Logo - Starts at bottom, moves to top center on scroll */}
+        <motion.div
+          className="absolute bottom-0 left-[20%] -translate-x-1/2 translate-y-1/2 z-20"
+          style={{ 
+            y: logoY,
+            x: logoX,
+            scale: logoScale
+          }}
+        >
+          {/* Banner Logo - Shows initially, fades out */}
+          <motion.img
+            src="/logobanner.png"
+            alt="Creativity Banner"
+            className="h-auto max-w-[clamp(20rem,60vw,80rem)]"
+            initial={{ scale: 2.5, opacity: 0, rotate: -3 }}
+            animate={{ 
+              scale: 1, 
+              opacity: isScrolled ? 0 : 1, 
+              rotate: 0 
+            }}
+            transition={{ 
+              duration: 1.8, 
+              delay: 0.6,
+              ease: [0.23, 1, 0.32, 1],
+              scale: { duration: 1.4, ease: [0.23, 1, 0.32, 1] },
+              opacity: { duration: 0.3, ease: [0.23, 1, 0.32, 1] },
+              rotate: { duration: 1.8, ease: [0.23, 1, 0.32, 1] }
+            }}
+          />
+          
+          {/* 255 Logo - Fades in to replace banner */}
+          <motion.img
+            src="/255-logo.svg"
+            alt="255 Agency Logo"
+            className="h-auto max-w-[clamp(20rem,60vw,80rem)] absolute top-0 left-0"
+            animate={{ 
+              opacity: isScrolled ? 1 : 0
+            }}
+            transition={{ 
+              duration: 0.3,
+              ease: [0.23, 1, 0.32, 1]
+            }}
+          />
+        </motion.div>
       </div>
 
       {/* Decorative Plus Elements */}

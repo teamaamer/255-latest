@@ -38,14 +38,14 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="stats" className="py-4 px-6 md:px-12 bg-[#1a1a1a]">
+    <section id="stats" className="py-2 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-white text-sm tracking-widest text-center mb-6"
+          className="text-white text-sm tracking-widest text-center mb-4"
         >
           PERFORMANCE SNAPSHOT
         </motion.h3>

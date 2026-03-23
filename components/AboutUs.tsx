@@ -64,87 +64,56 @@ const AboutUs = () => {
       `}</style>
 
       <div className="container mx-auto">
-        <motion.div
+        {/* Title */}
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="text-5xl md:text-7xl font-bold mb-12 text-center text-[#ff5a1f]"
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-12">
-            About Us
-          </h2>
-          
-          {/* Company Story Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Card 1: Global Expansion */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-[rgb(255,68,0)] hover:shadow-xl transition-all duration-300"
-            >
-              <div className="w-16 h-16 mb-6">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <circle cx="32" cy="32" r="20" fill="none" stroke="rgb(255,68,0)" strokeWidth="2"/>
-                  <path d="M32 12 L32 52 M12 32 L52 32" stroke="rgb(255,68,0)" strokeWidth="2"/>
-                  <path d="M20 20 Q32 28 44 20 M20 44 Q32 36 44 44" stroke="rgb(255,68,0)" strokeWidth="2" fill="none"/>
-                  <circle cx="20" cy="20" r="3" fill="#FFA366"/>
-                  <circle cx="44" cy="20" r="3" fill="#FFA366"/>
-                  <circle cx="32" cy="32" r="3" fill="#FFA366"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-black">Global Reach</h3>
-              <p className="text-[var(--color-gray)] leading-relaxed">
-                <span className="text-[rgb(255,68,0)] font-bold">Founded in 2020 in Palestine</span>, we've expanded globally with offices in <span className="font-semibold">Nazareth</span>, <span className="font-semibold">Riyadh</span>, and the <span className="font-semibold">United States</span> (2025).
-              </p>
-            </motion.div>
+          About Us
+        </motion.h2>
 
-            {/* Card 2: Expert Leadership */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-[rgb(255,68,0)] hover:shadow-xl transition-all duration-300"
-            >
-              <div className="w-16 h-16 mb-6">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <circle cx="32" cy="24" r="8" fill="rgb(255,68,0)"/>
-                  <path d="M18 48 Q18 36 32 36 Q46 36 46 48" fill="rgb(255,68,0)" opacity="0.7"/>
-                  <path d="M24 28 L28 32 L36 24" stroke="#FFA366" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-black">Expert Leadership</h3>
-              <p className="text-[var(--color-gray)] leading-relaxed">
-                Led by Sakher Olayaan with <span className="text-[rgb(255,68,0)] font-bold">7+ years in marketing</span> and <span className="text-[rgb(255,68,0)] font-bold">8+ years in direct sales</span>, backed by <span className="font-semibold">28 skilled professionals</span>.
-              </p>
-            </motion.div>
+        {/* Two Column Layout */}
+        <div className="flex flex-col lg:flex-row gap-8 items-center mb-16">
+          {/* Left Side - Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full lg:w-1/2 space-y-6"
+          >
+            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+              255 was established in 2020 in Palestine by Sakher Olayaan as a forward-thinking marketing agency built on a foundation of expertise and innovation.
+            </p>
+            
+            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+              After achieving strong success within its first two years, the company expanded globally, opening an office in Nazareth, followed by expansion into Saudi Arabia with an office in Riyadh. In 2025, 255 was officially established and registered in the United States, becoming part of a global network of companies serving clients worldwide.
+            </p>
+            
+            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+              With over 7 years of hands-on experience in marketing, advertising, and promotion, Sakher Olayaan leads the company with a clear strategic vision and a results-driven approach. Under his leadership, a team of 28 skilled professionals works on delivering impactful marketing campaigns that deeply connect with target audiences.
+            </p>
+            
+            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+              What sets 255 apart is the integration of advanced marketing expertise with over 8 years of experience in direct sales with international companies. This unique combination enables us to build strategies that focus not only on reach and engagement, but on driving real sales and measurable growth.
+            </p>
+          </motion.div>
 
-            {/* Card 3: Sales-Driven Results */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-[rgb(255,68,0)] hover:shadow-xl transition-all duration-300"
-            >
-              <div className="w-16 h-16 mb-6">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <path d="M16 44 L24 32 L32 36 L40 24 L48 28" stroke="rgb(255,68,0)" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                  <polygon points="48,28 48,20 40,28" fill="rgb(255,68,0)"/>
-                  <circle cx="24" cy="32" r="3" fill="#FFA366"/>
-                  <circle cx="32" cy="36" r="3" fill="#FFA366"/>
-                  <circle cx="40" cy="24" r="3" fill="#FFA366"/>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-black">Sales-Focused</h3>
-              <p className="text-[var(--color-gray)] leading-relaxed">
-                We don't just engage—we <span className="font-semibold">drive real sales and measurable growth</span>. Our unique blend of marketing and sales expertise delivers results that matter.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
+          {/* Right Side - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="w-full lg:w-1/2"
+          >
+            <img 
+              src="/images/about-side-image.png" 
+              alt="About 255 Agency" 
+              className="w-full h-auto rounded-xl shadow-lg"
+            />
+          </motion.div>
+        </div>
         {/* Our Approach */}
         <div className="mb-16 -mx-6 md:-mx-12 px-6 md:px-12 py-16 relative overflow-hidden">
           {/* Background Image */}
