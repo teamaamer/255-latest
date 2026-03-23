@@ -64,7 +64,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Logo - Starts at bottom, moves to top center on scroll */}
+        {/* Logo - Starts at bottom, moves up when scrolling */}
         <motion.div
           className="absolute bottom-0 left-[20%] -translate-x-1/2 translate-y-1/2 z-20"
           style={{ 
@@ -73,7 +73,7 @@ export default function Hero() {
             scale: logoScale
           }}
         >
-          {/* Banner Logo - Shows initially, fades out */}
+          {/* Banner Logo - Shows initially, fades out as it moves up */}
           <motion.img
             src="/logobanner.png"
             alt="Creativity Banner"
@@ -91,20 +91,6 @@ export default function Hero() {
               scale: { duration: 1.4, ease: [0.23, 1, 0.32, 1] },
               opacity: { duration: 0.3, ease: [0.23, 1, 0.32, 1] },
               rotate: { duration: 1.8, ease: [0.23, 1, 0.32, 1] }
-            }}
-          />
-          
-          {/* 255 Logo - Fades in to replace banner */}
-          <motion.img
-            src="/255-logo.svg"
-            alt="255 Agency Logo"
-            className="h-auto max-w-[clamp(20rem,60vw,80rem)] absolute top-0 left-0"
-            animate={{ 
-              opacity: isScrolled ? 1 : 0
-            }}
-            transition={{ 
-              duration: 0.3,
-              ease: [0.23, 1, 0.32, 1]
             }}
           />
         </motion.div>

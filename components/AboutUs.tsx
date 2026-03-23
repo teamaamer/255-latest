@@ -257,7 +257,7 @@ const AboutUs = () => {
         </div>
 
         {/* Our Values */}
-        <div className="mb-32">
+        <div className="mb-8">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

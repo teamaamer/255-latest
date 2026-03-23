@@ -113,11 +113,10 @@ export default function Navigation() {
 
           {/* Center Logo Banner */}
           <div className="flex-auto relative">
-            {/* 255 Logo - Always visible */}
             <div className="flex justify-center">
               <Link href="/">
                 <img
-                  src="/255-logo.svg?v=3"
+                  src="/255-logo.svg"
                   alt="255 Agency Logo"
                   className="h-5 md:h-6 w-auto cursor-pointer hover:opacity-80 transition-opacity"
                 />
