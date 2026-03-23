@@ -14,6 +14,10 @@ export default function Hero() {
   const logoX = useTransform(scrollY, [0, 300], [0, 30]); // Moves from left (20%) to center (50%)
   const logoScale = useTransform(scrollY, [0, 300], [1, 0.4]); // Shrinks as it moves up
   
+  // Headline animation - moves up when scrolling
+  const headlineY = useTransform(scrollY, [0, 300], [0, -200]);
+  const headlineOpacity = useTransform(scrollY, [0, 200], [1, 0]);
+  
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -49,6 +53,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0.001, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
+              style={{ y: headlineY, opacity: headlineOpacity }}
               transition={{ duration: 1.5, ease: [0.44, 0, 0.56, 1] }}
             >
               <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
@@ -103,26 +108,6 @@ export default function Hero() {
             }}
           />
         </motion.div>
-      </div>
-
-      {/* Decorative Plus Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0.001, x: i % 2 === 0 ? 367 : -367 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5, delay: 0.5 + i * 0.1, ease: [0.44, 0, 0.56, 1] }}
-            className="absolute text-white/20 text-4xl"
-            style={{
-              top: `${20 + (i * 10)}%`,
-              left: i % 2 === 0 ? '10%' : 'auto',
-              right: i % 2 === 0 ? 'auto' : '10%',
-            }}
-          >
-            +
-          </motion.div>
-        ))}
       </div>
     </section>
   )
