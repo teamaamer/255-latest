@@ -69,33 +69,33 @@ const AboutUs = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-7xl font-bold mb-12 text-center text-[#ff5a1f]"
+          className="text-5xl md:text-7xl font-bold mb-12 text-left text-[#ff5a1f]"
         >
           About Us
         </motion.h2>
 
         {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 items-center mb-16">
+        <div className="flex flex-col lg:flex-row gap-8 mb-16">
           {/* Left Side - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/2 space-y-6"
+            className="w-full lg:w-1/2 space-y-6 flex flex-col justify-start"
           >
-            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+            <p className="text-[#2d2d2d] text-lg leading-relaxed">
               255 was established in 2020 in Palestine by Sakher Olayaan as a forward-thinking marketing agency built on a foundation of expertise and innovation.
             </p>
             
-            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+            <p className="text-[#2d2d2d] text-lg leading-relaxed">
               After achieving strong success within its first two years, the company expanded globally, opening an office in Nazareth, followed by expansion into Saudi Arabia with an office in Riyadh. In 2025, 255 was officially established and registered in the United States, becoming part of a global network of companies serving clients worldwide.
             </p>
             
-            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+            <p className="text-[#2d2d2d] text-lg leading-relaxed">
               With over 7 years of hands-on experience in marketing, advertising, and promotion, Sakher Olayaan leads the company with a clear strategic vision and a results-driven approach. Under his leadership, a team of 28 skilled professionals works on delivering impactful marketing campaigns that deeply connect with target audiences.
             </p>
             
-            <p className="text-[var(--color-gray)] text-lg leading-relaxed">
+            <p className="text-[#2d2d2d] text-lg leading-relaxed">
               What sets 255 apart is the integration of advanced marketing expertise with over 8 years of experience in direct sales with international companies. This unique combination enables us to build strategies that focus not only on reach and engagement, but on driving real sales and measurable growth.
             </p>
           </motion.div>
@@ -110,7 +110,7 @@ const AboutUs = () => {
             <img 
               src="/images/about-side-image.png" 
               alt="About 255 Agency" 
-              className="w-full h-auto rounded-xl shadow-lg"
+              className="w-full h-full object-cover rounded-xl shadow-lg"
             />
           </motion.div>
         </div>
