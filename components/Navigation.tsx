@@ -29,9 +29,9 @@ export default function Navigation() {
     { label: "Hero", href: "/#hero" },
     { label: "Services", href: "/#services" },
     { label: "About Us", href: "/#about" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Portfolio", href: "/portfolio.pdf" },
     { label: "Team", href: "/#team" },
-    { label: "Pricing", href: "/#pricing" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Contact", href: "/#contact" },
   ]
 
