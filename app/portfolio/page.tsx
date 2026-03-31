@@ -1,11 +1,14 @@
 'use client'
 
 import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function PortfolioPage() {
+  const router = useRouter()
+
   useEffect(() => {
-    // Redirect to PDF file
-    window.location.href = '/portfolio.pdf'
+    // Open PDF in current window
+    window.open('/portfolio.pdf', '_self')
   }, [])
 
   return (
