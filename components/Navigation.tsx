@@ -17,7 +17,7 @@ export default function Navigation() {
       const documentHeight = document.documentElement.scrollHeight - windowHeight
       const progress = Math.min(scrollY / documentHeight, 1)
       
-      setIsScrolled(scrollY > 50)
+      setIsScrolled(scrollY >= 300)
       setScrollProgress(progress)
     }
 
@@ -115,10 +115,16 @@ export default function Navigation() {
           <div className="flex-auto relative">
             <div className="flex justify-center">
               <Link href="/">
-                <img
-                  src="/255-logo.svg"
+                <motion.img
+                  src="/logobanner.png"
                   alt="255 Agency Logo"
                   className="h-5 md:h-6 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ 
+                    opacity: isScrolled ? 1 : 0,
+                    scale: isScrolled ? 1 : 0.8
+                  }}
+                  transition={{ duration: 0.3 }}
                 />
               </Link>
             </div>

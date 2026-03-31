@@ -26,14 +26,14 @@ const clientLogos = [
 
 export default function LogoTicker({ title = "Trusted by leading brands", speed = 10 }: LogoTickerProps) {
   return (
-    <section aria-label="Logo Ticker" className="py-2 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
+    <section aria-label="Logo Ticker" className="py-1 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
       <div className="container mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-white/60 text-[10px] md:text-xs font-medium uppercase tracking-wider mb-3"
+          className="text-center text-white/60 text-[10px] md:text-xs font-medium uppercase tracking-wider mt-2 mb-2"
         >
           {title}
         </motion.p>

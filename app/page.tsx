@@ -7,7 +7,6 @@ import LogoTicker from "@/components/LogoTicker";
 import Services from "@/components/Services";
 import OurClients from "@/components/OurClients";
 import Team from "@/components/Team";
-import Pricing from "@/components/Pricing";
 import ClientStories from "@/components/ClientStories";
 import VideoShowcase from "@/components/VideoShowcase";
 import Contact from "@/components/Contact";
@@ -59,7 +58,6 @@ export default async function Home() {
       <Services />
       <PortfolioSection slides={portfolioSlides} />
       <Team />
-      <Pricing />
       <ClientStories />
       <VideoShowcase />
       <Contact />

@@ -38,14 +38,14 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="stats" className="pt-12 pb-2 px-6 md:px-12 bg-[#1a1a1a]">
+    <section id="stats" className="pt-2 pb-2 px-6 md:px-12 bg-[#1a1a1a]">
       <div className="container mx-auto">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-white text-sm tracking-widest text-center mb-8"
+          className="text-white text-sm tracking-widest text-center mb-4"
         >
           PERFORMANCE SNAPSHOT
         </motion.h3>
@@ -61,7 +61,7 @@ export default function Stats() {
               className={`flex-1 text-center py-8 md:py-0 md:px-8 lg:px-16 ${index === 2 ? 'md:ml-8' : ''}`}
             >
               <div 
-                className="text-[10px] md:text-[12px] text-white/60 mb-4 whitespace-pre-line uppercase font-[400]"
+                className="text-[10px] md:text-[12px] text-white/60 mb-2 whitespace-pre-line uppercase font-[400]"
                 style={{ letterSpacing: '2px', fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 {stat.label}

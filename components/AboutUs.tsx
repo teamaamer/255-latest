@@ -115,7 +115,7 @@ const AboutUs = () => {
           </motion.div>
         </div>
         {/* Our Approach */}
-        <div className="mb-16 -mx-6 md:-mx-12 px-6 md:px-12 py-16 relative overflow-hidden">
+        <div className="mb-0 py-16 relative overflow-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
@@ -127,7 +127,7 @@ const AboutUs = () => {
           </div>
           
           {/* Content */}
-          <div className="relative z-10">
+          <div className="relative z-10 px-6 md:px-12">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -253,115 +253,6 @@ const AboutUs = () => {
               </motion.div>
             </div>
           </div>
-          </div>
-        </div>
-
-        {/* Our Values */}
-        <div className="mb-8">
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-bold text-[rgb(255,68,0)] mb-12 text-center"
-          >
-            Our Values
-          </motion.h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <circle cx="32" cy="32" r="20" fill="none" stroke="rgb(255,68,0)" strokeWidth="3"/>
-                  <circle cx="32" cy="32" r="12" fill="none" stroke="rgb(255,68,0)" strokeWidth="3"/>
-                  <circle cx="32" cy="32" r="5" fill="rgb(255,68,0)"/>
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Purpose-Driven</h3>
-              <p className="text-gray-700 text-sm">Great brands speak with purpose, connect with people, and lead with meaning</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <path d="M20 28 Q20 20 28 20 Q32 20 32 24 Q32 20 36 20 Q44 20 44 28 Q44 44 32 52 Q20 44 20 28 Z" fill="rgb(255,68,0)"/>
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Client-Centered</h3>
-              <p className="text-gray-700 text-sm">Centering client vision and goals while diving deep into their story and audience</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <rect x="18" y="28" width="28" height="8" fill="rgb(255,68,0)" rx="2"/>
-                  <rect x="28" y="20" width="8" height="24" fill="rgb(255,68,0)" rx="2"/>
-                  <circle cx="32" cy="32" r="4" fill="white"/>
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Methodical</h3>
-              <p className="text-gray-700 text-sm">Brand building is step-by-step, like digital design built from precise values</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <path d="M32 12 L36 28 L32 32 L28 28 Z" fill="rgb(255,68,0)"/>
-                  <rect x="28" y="32" width="8" height="12" fill="rgb(255,68,0)" rx="1"/>
-                  <rect x="26" y="44" width="12" height="4" fill="rgb(255,68,0)" rx="2"/>
-                  <path d="M24 28 L28 28 M36 28 L40 28 M26 22 L30 22 M34 22 L38 22" stroke="#FFA366" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Maximum Impact</h3>
-              <p className="text-gray-700 text-sm">255 represents the highest value—symbolizing boldness, clarity, and maximum impact</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300 text-center col-span-2 md:col-span-1"
-            >
-              <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                  <path d="M32 16 L34 26 L44 28 L34 30 L32 40 L30 30 L20 28 L30 26 Z" fill="rgb(255,68,0)"/>
-                  <path d="M44 16 L45 20 L49 21 L45 22 L44 26 L43 22 L39 21 L43 20 Z" fill="#FFA366"/>
-                  <path d="M20 44 L21 48 L25 49 L21 50 L20 54 L19 50 L15 49 L19 48 Z" fill="#FFA366"/>
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Essence First</h3>
-              <p className="text-gray-700 text-sm">Logos embody essence and build connection—the voice of a brand in a single mark</p>
-            </motion.div>
           </div>
         </div>
       </div>

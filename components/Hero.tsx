@@ -12,7 +12,7 @@ export default function Hero() {
   // Logo position transforms - moves from bottom to top center
   const logoY = useTransform(scrollY, [0, 300], [0, -600]);
   const logoX = useTransform(scrollY, [0, 300], [0, 30]); // Moves from left (20%) to center (50%)
-  const logoScale = useTransform(scrollY, [0, 300], [1, 0.4]); // Shrinks as it moves up
+  const logoScale = useTransform(scrollY, [0, 300], [1, 0.2]); // Shrinks as it moves up
   
   // Headline animation - moves up when scrolling
   const headlineY = useTransform(scrollY, [0, 300], [0, -200]);
