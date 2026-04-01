@@ -122,7 +122,7 @@ const AboutUs = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/images/website-team-banner.avif" 
+              src="/website-team-banner.jpeg" 
               alt="Team Background" 
               className="w-full h-full object-cover"
             />
@@ -162,7 +162,7 @@ const AboutUs = () => {
 
             {/* Left Side - Stacked Cards */}
             <div className="w-full lg:w-1/2 lg:order-1 space-y-4">
-              {/* Agile Methodology */}
+              {/* Speed That Drives Results */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -171,20 +171,13 @@ const AboutUs = () => {
                 className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 flex-shrink-0">
-                    <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                      <path d="M32 12 L42 22 L32 32 L22 22 Z" fill="rgb(255,68,0)"/>
-                      <path d="M32 32 L42 42 L32 52 L22 42 Z" fill="rgb(255,68,0)" opacity="0.7"/>
-                      <circle cx="32" cy="32" r="4" fill="#FFA366"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-bold text-white">Agile Methodology</h3>
+                  <span className="text-2xl">🔶</span>
+                  <h3 className="text-lg font-bold text-white">Speed That Drives Results</h3>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base">Helping clients adapt to market trends and stay ahead digitally</p>
+                <p className="text-gray-300 text-sm md:text-base">We move fast, test faster, and scale what works.</p>
               </motion.div>
 
-              {/* Data-Driven Insights */}
+              {/* Data That Makes You Money */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -193,21 +186,13 @@ const AboutUs = () => {
                 className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 flex-shrink-0">
-                    <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                      <rect x="16" y="36" width="8" height="16" fill="rgb(255,68,0)" rx="2"/>
-                      <rect x="28" y="28" width="8" height="24" fill="rgb(255,68,0)" rx="2"/>
-                      <rect x="40" y="20" width="8" height="32" fill="rgb(255,68,0)" rx="2"/>
-                      <path d="M18 24 L30 18 L42 14" stroke="#FFA366" strokeWidth="2" fill="none"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Data-Driven Insights</h3>
+                  <span className="text-2xl">🔶</span>
+                  <h3 className="text-xl font-bold text-white">Data That Makes You Money</h3>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base">Blending sharp data insights with bold creative vision to ignite growth</p>
+                <p className="text-gray-300 text-sm md:text-base">We turn insights into campaigns that actually convert.</p>
               </motion.div>
 
-              {/* Opportunity Focus */}
+              {/* Growth-Focused Thinking */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -216,23 +201,13 @@ const AboutUs = () => {
                 className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 flex-shrink-0">
-                    <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                      <path d="M20 40 L28 28 L36 36 L44 20" stroke="rgb(255,68,0)" strokeWidth="3" fill="none" strokeLinecap="round"/>
-                      <polygon points="44,20 44,28 36,20" fill="rgb(255,68,0)"/>
-                      <circle cx="20" cy="40" r="3" fill="#FFA366"/>
-                      <circle cx="28" cy="28" r="3" fill="#FFA366"/>
-                      <circle cx="36" cy="36" r="3" fill="#FFA366"/>
-                      <circle cx="44" cy="20" r="3" fill="#FFA366"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Opportunity Focus</h3>
+                  <span className="text-2xl">🔶</span>
+                  <h3 className="text-xl font-bold text-white">Growth-Focused Thinking</h3>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base">Turning challenges into opportunities with tailored marketing experiences</p>
+                <p className="text-gray-300 text-sm md:text-base">Every move we make is designed to grow your brand.</p>
               </motion.div>
 
-              {/* Targeted Precision */}
+              {/* Precision Targeting */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -241,21 +216,10 @@ const AboutUs = () => {
                 className="bg-[#2a2a2a] border-2 border-gray-700 rounded-xl p-4 hover:border-[rgb(255,68,0)] hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 flex-shrink-0">
-                    <svg viewBox="0 0 64 64" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="32" cy="32" r="30" fill="rgb(255,68,0)" opacity="0.1"/>
-                      <circle cx="32" cy="32" r="20" fill="none" stroke="rgb(255,68,0)" strokeWidth="2"/>
-                      <circle cx="32" cy="32" r="12" fill="none" stroke="rgb(255,68,0)" strokeWidth="2"/>
-                      <circle cx="32" cy="32" r="4" fill="rgb(255,68,0)"/>
-                      <path d="M32 12 L32 20" stroke="#FFA366" strokeWidth="2"/>
-                      <path d="M32 44 L32 52" stroke="#FFA366" strokeWidth="2"/>
-                      <path d="M12 32 L20 32" stroke="#FFA366" strokeWidth="2"/>
-                      <path d="M44 32 L52 32" stroke="#FFA366" strokeWidth="2"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-bold text-white">Targeted Precision</h3>
+                  <span className="text-2xl">🔶</span>
+                  <h3 className="text-lg font-bold text-white">Precision Targeting</h3>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base">Connecting the right content to the right customer at the perfect time</p>
+                <p className="text-gray-300 text-sm md:text-base">No wasted budget. Just the right audience, every time.</p>
               </motion.div>
             </div>
           </div>

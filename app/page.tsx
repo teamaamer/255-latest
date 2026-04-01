@@ -10,6 +10,7 @@ import Team from "@/components/Team";
 import ClientStories from "@/components/ClientStories";
 import AllClients from "@/components/AllClients";
 import VideoShowcase from "@/components/VideoShowcase";
+import FareedStory from "@/components/FareedStory";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AboutUs from "@/components/AboutUs";
@@ -59,6 +60,7 @@ export default async function Home() {
       <Services />
       <PortfolioSection slides={portfolioSlides} />
       <Team />
+      <FareedStory />
       <ClientStories />
       <AllClients />
       <VideoShowcase />

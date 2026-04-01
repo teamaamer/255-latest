@@ -26,6 +26,56 @@ export const navMenu2 = [
 
 export const servicesData = [
   {
+    title: "Social Media Management",
+    slug: "social-media-management",
+    icon: "share-2",
+    image: "/services/social/1.jpg",
+    description: "We turn your accounts into a professional digital presence that reflects the strength of your brand and builds real connections with your audience.",
+    deliverables: [
+      "Account Management",
+      "Monthly Content Plan",
+      "Post Design",
+      "Content Writing & Captions",
+      "Story Design",
+      "Monthly Content Planning",
+      "Publishing Management"
+    ],
+    exampleImages: [
+      "/services/social/social1.jpg",
+      "/services/social/social2.jpg",
+      "/services/social/social3.jpg",
+      "/services/social/social4.jpg",
+      "/services/social/social5.jpg",
+      "/services/social/social6.png",
+      "/services/social/social7.jpg"
+    ]
+  },
+  {
+    title: "Visual Branding",
+    slug: "visual-branding",
+    icon: "palette",
+    image: "/services/branding/logo1.jpg",
+    description: "At 255, we turn ideas into strong visual identities that reflect a brand's personality, values, and direction. We create complete branding systems that are consistent, clear, and memorable.",
+    deliverables: [
+      "Logo Design",
+      "Visual Identity Design",
+      "Brand Guidelines",
+      "Color Palette & Typography",
+      "Packaging Design",
+      "Brand Applications",
+      "Brand Refresh & Rebranding"
+    ],
+    exampleImages: [
+      "/services/branding/logo1.png",
+      "/services/branding/logo2.png",
+      "/services/branding/logo3.png",
+      "/services/branding/logo4.png",
+      "/services/branding/logo5.png",
+      "/services/branding/logo6.png",
+      "/services/branding/logo7.png"
+    ]
+  },
+  {
     title: "CONSULTING",
     slug: "consulting",
     icon: "lightbulb",
