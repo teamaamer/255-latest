@@ -9,13 +9,13 @@ export default function VideoShowcase() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="py-20 px-6 md:px-12 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section ref={ref} className="pt-0 pb-20 px-6 md:px-12 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-5xl md:text-7xl font-bold mb-6">
             See Our Latest

@@ -6,22 +6,22 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    quote: "This agency doesn't just run ads — they build real marketing strategies. They took the time to understand our business goals and created campaigns that delivered measurable results. Communication has been excellent, deadlines are always met, and their creativity stands out. We value them as a true partner in our growth.",
-    author: "KidsRus Learning Center",
-    role: "4 reviews · a week ago",
-    image: "/images/AvA1cgyFsNBzB5fQS5lTHrLbWrc.jpg"
-  },
-  {
-    quote: "Wish I've done this years ago, it's been 3 months only but our numbers has gone up significantly!! and still on going although it's Ramadan already!! Thanks guys 🙏🙏🙏",
-    author: "Hatim Qarmash",
-    role: "3 reviews · a week ago",
-    image: "/images/H2vtO5AcqO3JQ9DLTNll2arrgiE.jpg"
-  },
-  {
     quote: "Professional, creative, and consistent. Our social media has never looked better. Highly recommend!",
     author: "Star Box Day Care",
-    role: "6 reviews · 1 photo · a week ago",
-    image: "/images/kMKd9NTvf9O2me1pvCl9a31nIXc.jpg"
+    role: "6 reviews · 1 photo · 4 weeks ago",
+    image: "/starbok1.png"
+  },
+  {
+    quote: "We're very happy with the service we received. The team is creative, attentive, and always quick to respond. They helped our business grow, and we appreciate their hard work!",
+    author: "laveen health care",
+    role: "1 review · 4 weeks ago",
+    image: "/laveen.png"
+  },
+  {
+    quote: "No doubt you're the best. Got them to handle my 2 business and cant see anything but the good. Highly recommended",
+    author: "Mike Swaid",
+    role: "3 reviews · 2 weeks ago",
+    image: "/kazamaza.png"
   }
 ]
 
