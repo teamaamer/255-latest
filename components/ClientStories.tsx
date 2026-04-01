@@ -30,20 +30,31 @@ export default function ClientStories() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} id="client-stories" className="py-8 px-6 md:px-12 bg-[var(--color-light-gray)]">
+    <section ref={ref} id="client-stories" className="py-16 px-6 md:px-12 bg-[#2d2d2d]">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
-            Client Stories
-          </h2>
-          <p className="text-[var(--color-gray)] text-xl max-w-2xl">
-            Hear from the brands we've helped transform
-          </p>
+          <div className="flex items-center gap-4">
+            <h2 className="text-5xl md:text-7xl font-bold text-white">
+              Google Reviews
+            </h2>
+            <div className="flex items-center gap-2">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <svg
+                  key={star}
+                  className="w-8 h-8 fill-yellow-400"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              ))}
+              <span className="text-gray-400 text-2xl ml-2">(5/5)</span>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">

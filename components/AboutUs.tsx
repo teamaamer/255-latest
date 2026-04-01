@@ -100,18 +100,21 @@ const AboutUs = () => {
             </p>
           </motion.div>
 
-          {/* Right Side - Image */}
+          {/* Right Side - Video */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="w-full lg:w-1/2"
           >
-            <img 
-              src="/images/about-side-image.png" 
-              alt="About 255 Agency" 
-              className="w-full h-full object-cover rounded-xl shadow-lg"
-            />
+            <div className="w-full aspect-video rounded-xl shadow-lg overflow-hidden">
+              <iframe 
+                src="https://www.youtube.com/embed/sOq2Yt83gE0?autoplay=1&mute=1&loop=1&playlist=sOq2Yt83gE0&controls=0&showinfo=0&rel=0&modestbranding=1"
+                className="w-full h-full"
+                style={{ border: 'none' }}
+                allow="autoplay; encrypted-media"
+              />
+            </div>
           </motion.div>
         </div>
         {/* Our Approach */}
@@ -139,7 +142,7 @@ const AboutUs = () => {
           </motion.h2>
           
           <div className="flex flex-col lg:flex-row gap-6 items-start">
-            {/* Image - Shows first on mobile, right on desktop */}
+            {/* Video - Shows first on mobile, right on desktop */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -147,11 +150,14 @@ const AboutUs = () => {
               viewport={{ once: true }}
               className="w-full lg:w-1/2 lg:order-2"
             >
-              <img 
-                src="/images/about-side-image.png" 
-                alt="About Us" 
-                className="w-full h-full object-cover rounded-xl"
-              />
+              <div className="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe 
+                  src="https://www.youtube.com/embed/sOq2Yt83gE0?autoplay=1&mute=1&loop=1&playlist=sOq2Yt83gE0&controls=0&showinfo=0&rel=0&modestbranding=1"
+                  className="w-full h-full"
+                  style={{ border: 'none' }}
+                  allow="autoplay; encrypted-media"
+                />
+              </div>
             </motion.div>
 
             {/* Left Side - Stacked Cards */}
