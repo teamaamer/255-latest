@@ -17,7 +17,7 @@ export default function Navigation() {
       const documentHeight = document.documentElement.scrollHeight - windowHeight
       const progress = Math.min(scrollY / documentHeight, 1)
       
-      setIsScrolled(scrollY >= 300)
+      setIsScrolled(scrollY > 1)
       setScrollProgress(progress)
     }
 
