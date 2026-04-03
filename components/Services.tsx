@@ -178,28 +178,7 @@ export default function Services() {
                               </a>
                             </div>
                           ))
-                        ) : (
-                          // Fallback for services without exampleImages
-                          [...Array(12)].map((_, exampleIndex) => (
-                            <div
-                              key={exampleIndex}
-                              className="flex-shrink-0 w-[400px] h-[400px] rounded-[20px] overflow-hidden relative group cursor-pointer transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-xl"
-                            >
-                              <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                              </div>
-
-                              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                                <h4 className="text-white text-lg font-bold mb-2">
-                                  Example {exampleIndex + 1}
-                                </h4>
-                                <p className="text-white/80 text-sm">
-                                  {service.title} showcase
-                                </p>
-                              </div>
-                            </div>
-                          ))
-                        )}
+                        ) : null}
                       </motion.div>
                     </div>
                   </div>
