@@ -15,6 +15,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AboutUs from "@/components/AboutUs";
 import Stats from "@/components/Stats";
+import Partners from "@/components/Partners";
 import { clientsData } from "@/data/data";
 import fs from "fs";
 import path from "path";
@@ -57,6 +58,7 @@ export default async function Home() {
       </VideoBackgroundSection> */}
       {/* <OurClients /> */}
       <AboutUs />
+      <Partners />
       <Services />
       <PortfolioSection slides={portfolioSlides} />
       <Team />

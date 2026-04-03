@@ -110,7 +110,6 @@ export const servicesData = [
       "Marketing Strategy Development",
       "Advertising Campaign Management",
       "Market & Competitor Analysis",
-      "Performance Optimization",
       "Audience Targeting",
       "Marketing Message Development",
       "Campaign & Seasonal Planning"
@@ -221,6 +220,49 @@ export const servicesData = [
       "/int/int5.jpg",
       "/int/int6.jpg",
       "/int/int7.jpg"
+    ]
+  },
+  {
+    title: "Creating Websites & E-commerce",
+    slug: "web-development",
+    icon: "globe",
+    image: "/services/web/web1.jpg",
+    description: "We build modern, responsive websites and e-commerce platforms that drive results. From concept to launch, we create digital experiences that engage your audience, showcase your brand, and turn visitors into customers.",
+    deliverables: [
+      "Custom Website Design & Development",
+      "E-commerce Solutions",
+      "Responsive & Mobile-Friendly Design",
+      "SEO Optimization",
+      "Content Management Systems",
+      "Website Maintenance & Support"
+    ],
+    exampleWebsites: [
+      {
+        url: "https://www.wadeeharvest.ca/",
+        name: "Wadee Harvest"
+      },
+      {
+        url: "https://kiddiecare-daycare.com/",
+        name: "Kiddie Care Daycare"
+      },
+      {
+        url: "https://terazz.com/",
+        name: "Terazz",
+        screenshot: "/TERRAZ.png"
+      },
+      {
+        url: "https://threeriversshine.com/",
+        name: "Three Rivers Shine"
+      },
+      {
+        url: "https://avalserv.com/",
+        name: "Aval Serv"
+      },
+      {
+        url: "https://darnapalestine.com/",
+        name: "Darna Palestine",
+        screenshot: "/ALDDAR.png"
+      }
     ]
   }
 ];

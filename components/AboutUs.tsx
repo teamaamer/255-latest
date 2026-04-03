@@ -109,7 +109,7 @@ const AboutUs = () => {
           >
             <div className="w-full aspect-video rounded-xl shadow-lg overflow-hidden">
               <iframe 
-                src="https://www.youtube.com/embed/sOq2Yt83gE0?autoplay=1&mute=1&loop=1&playlist=sOq2Yt83gE0&controls=0&showinfo=0&rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/OhHfUAelvWo?autoplay=1&mute=1&loop=1&playlist=OhHfUAelvWo&controls=0&showinfo=0&rel=0&modestbranding=1"
                 className="w-full h-full"
                 style={{ border: 'none' }}
                 allow="autoplay; encrypted-media"
@@ -152,7 +152,7 @@ const AboutUs = () => {
             >
               <div className="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
                 <iframe 
-                  src="https://www.youtube.com/embed/sOq2Yt83gE0?autoplay=1&mute=1&loop=1&playlist=sOq2Yt83gE0&controls=0&showinfo=0&rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/OhHfUAelvWo?autoplay=1&mute=1&loop=1&playlist=OhHfUAelvWo&controls=0&showinfo=0&rel=0&modestbranding=1"
                   className="w-full h-full"
                   style={{ border: 'none' }}
                   allow="autoplay; encrypted-media"

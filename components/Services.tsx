@@ -85,7 +85,7 @@ export default function Services() {
                       <motion.div
                         className="flex gap-4"
                         animate={{
-                          x: [0, -((400 + 16) * ((service.exampleVideos?.length || service.exampleImages?.length) || 6))]
+                          x: [0, -((400 + 16) * ((service.exampleWebsites?.length || service.exampleVideos?.length || service.exampleImages?.length) || 6))]
                         }}
                         transition={{
                           x: {
@@ -96,7 +96,49 @@ export default function Services() {
                           }
                         }}
                       >
-                        {service.exampleVideos ? (
+                        {service.exampleWebsites ? (
+                          // Display websites as clickable cards
+                          [...service.exampleWebsites, ...service.exampleWebsites].map((website, exampleIndex) => (
+                            <a
+                              key={exampleIndex}
+                              href={website.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-shrink-0 w-[400px] h-[400px] rounded-[20px] overflow-hidden relative group cursor-pointer transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-xl"
+                            >
+                              {/* Website Preview - Screenshot or Live iframe */}
+                              <div className="w-full h-full relative bg-white">
+                                {website.screenshot ? (
+                                  // Use screenshot image if provided
+                                  <img
+                                    src={website.screenshot}
+                                    alt={`${website.name} website`}
+                                    className="w-full h-full object-cover"
+                                  />
+                                ) : (
+                                  // Use live iframe if no screenshot
+                                  <iframe
+                                    src={website.url}
+                                    className="w-full h-full pointer-events-none"
+                                    style={{ border: 'none' }}
+                                    title={website.name}
+                                    sandbox="allow-same-origin allow-scripts"
+                                  />
+                                )}
+                                {/* Overlay to prevent interaction and show hover effect */}
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-3">
+                                    <span className="text-white text-2xl font-bold text-center px-4">{website.name}</span>
+                                    <div className="flex items-center gap-2 text-white bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
+                                      <span className="text-lg font-semibold">Visit Website</span>
+                                      <ArrowUpRight className="w-6 h-6" />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          ))
+                        ) : service.exampleVideos ? (
                           // Duplicate videos twice for seamless loop
                           [...service.exampleVideos, ...service.exampleVideos].map((videoUrl, exampleIndex) => {
                             // Check platform type
