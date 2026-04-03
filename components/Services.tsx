@@ -85,7 +85,7 @@ export default function Services() {
                       <motion.div
                         className="flex gap-4"
                         animate={{
-                          x: [0, -((400 + 16) * (service.exampleImages?.length || 6))]
+                          x: [0, -((400 + 16) * ((service.exampleVideos?.length || service.exampleImages?.length) || 6))]
                         }}
                         transition={{
                           x: {
@@ -96,7 +96,64 @@ export default function Services() {
                           }
                         }}
                       >
-                        {service.exampleImages ? (
+                        {service.exampleVideos ? (
+                          // Duplicate videos twice for seamless loop
+                          [...service.exampleVideos, ...service.exampleVideos].map((videoUrl, exampleIndex) => {
+                            // Check platform type
+                            const isInstagram = videoUrl.includes('instagram.com');
+                            const isFacebook = videoUrl.includes('facebook.com');
+                            
+                            let embedContent;
+                            
+                            if (isFacebook) {
+                              // For Facebook, use a clickable link with preview
+                              return (
+                                <a
+                                  key={exampleIndex}
+                                  href={videoUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex-shrink-0 w-[400px] h-[400px] rounded-[20px] overflow-hidden relative group cursor-pointer transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-xl bg-gradient-to-br from-blue-500 to-blue-700"
+                                >
+                                  <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="text-center">
+                                      <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                                        <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                        </svg>
+                                      </div>
+                                      <p className="text-white text-lg font-bold">View on Facebook</p>
+                                    </div>
+                                  </div>
+                                </a>
+                              );
+                            } else if (isInstagram) {
+                              // Extract Instagram post/reel ID
+                              const postId = videoUrl.split('/reel/')[1]?.split('/')[0] || videoUrl.split('/p/')[1]?.split('/')[0];
+                              embedContent = `https://www.instagram.com/p/${postId}/embed/`;
+                            } else {
+                              // YouTube video ID extraction
+                              const videoId = videoUrl.includes('shorts') 
+                                ? videoUrl.split('/shorts/')[1]?.split('?')[0]
+                                : videoUrl.split('youtu.be/')[1]?.split('?')[0] || videoUrl.split('v=')[1]?.split('&')[0];
+                              embedContent = `https://www.youtube.com/embed/${videoId}`;
+                            }
+                            
+                            return (
+                              <div
+                                key={exampleIndex}
+                                className="flex-shrink-0 w-[400px] h-[400px] rounded-[20px] overflow-hidden relative group cursor-pointer transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-xl"
+                              >
+                                <iframe
+                                  src={embedContent}
+                                  className="w-full h-full"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                />
+                              </div>
+                            );
+                          })
+                        ) : service.exampleImages ? (
                           // Duplicate images twice for seamless loop
                           [...service.exampleImages, ...service.exampleImages].map((imagePath, exampleIndex) => (
                             <div
@@ -108,14 +165,17 @@ export default function Services() {
                                 alt={`${service.title} example ${exampleIndex + 1}`}
                                 className="w-full h-full object-cover"
                               />
-                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                              <a 
+                                href="/portfolio"
+                                className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center"
+                              >
                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2">
                                   <span className="text-white text-xl font-bold">Watch More</span>
                                   <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                                     <ArrowUpRight className="w-6 h-6 text-white" />
                                   </div>
                                 </div>
-                              </div>
+                              </a>
                             </div>
                           ))
                         ) : (

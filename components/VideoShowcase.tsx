@@ -25,38 +25,41 @@ export default function VideoShowcase() {
           </p>
         </motion.div>
 
-        {/* MacBook Placeholder with Video */}
+        {/* MacBook Mockup with Video */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative max-w-6xl mx-auto"
         >
-          {/* MacBook Video */}
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full h-auto"
-          >
-            <source src="/laptop.mov" type="video/mp4" />
-          </video>
-          
-          {/* Video Overlay - positioned inside the screen */}
-          <div className="absolute top-[2.5%] left-[9%] w-[82%] h-[68%]">
-            <iframe 
-              src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F255PS%2Fvideos%2F1068914781803684%2F&show_text=false&width=560&t=0"
-              width="100%"
-              height="100%"
-              className="rounded-sm"
-              style={{ border: 'none', overflow: 'hidden' }} 
-              scrolling="no" 
-              frameBorder="0" 
-              allowFullScreen={true} 
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            />
+          {/* MacBook Pro Frame */}
+          <div className="relative bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl p-3 shadow-2xl">
+            {/* Screen Bezel */}
+            <div className="relative bg-black rounded-lg p-2">
+              {/* Notch */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-black rounded-b-2xl z-10"></div>
+              
+              {/* Screen */}
+              <div className="relative bg-gray-900 rounded-lg overflow-hidden aspect-[16/10]">
+                <iframe 
+                  src="https://www.youtube.com/embed/OhHfUAelvWo?autoplay=1&mute=1&loop=1&playlist=OhHfUAelvWo"
+                  width="100%"
+                  height="100%"
+                  className="w-full h-full"
+                  style={{ border: 'none' }} 
+                  frameBorder="0" 
+                  allowFullScreen={true} 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                />
+              </div>
+            </div>
+            
+            {/* Bottom Base */}
+            <div className="h-2 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-xl mt-1"></div>
           </div>
+          
+          {/* MacBook Shadow */}
+          <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[90%] h-8 bg-black/20 blur-2xl rounded-full"></div>
         </motion.div>
       </div>
     </section>

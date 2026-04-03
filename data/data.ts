@@ -76,77 +76,153 @@ export const servicesData = [
     ]
   },
   {
-    title: "CONSULTING",
-    slug: "consulting",
-    icon: "lightbulb",
-    image: "/services/consulting.png",
-    description: "Strategic guidance to help you stay ahead of trends, understand real client needs, and deliver results-driven solutions.",
+    title: "Print Design",
+    slug: "print-design",
+    icon: "printer",
+    image: "/services/printables/print1.png",
+    description: "We create print materials that bring your brand to life beyond the screen. At 255, we focus on every detail—from concept to final output—to deliver high-quality designs that elevate your brand presence.",
     deliverables: [
-      "Market research & competitive analysis",
-      "Brand positioning & differentiation strategy",
-      "Business development & growth planning"
+      "Brochure Design",
+      "Flyer Design",
+      "Business Card Design",
+      "Poster Design",
+      "Packaging Design",
+      "Menu Design",
+      "Print-Ready File Preparation"
+    ],
+    exampleImages: [
+      "/printables/print1.png",
+      "/printables/print2.png",
+      "/printables/print3.png",
+      "/printables/print4.png",
+      "/printables/print5.png",
+      "/printables/print6.png",
+      "/printables/print7.png"
     ]
   },
   {
-    title: "VISUAL BRANDING",
-    slug: "visual-branding",
-    icon: "palette",
-    image: "/services/visual-branding.png",
-    description: "Creating powerful brand identities that speak with purpose, connect with people, and lead with meaning.",
+    title: "Marketing",
+    slug: "marketing",
+    icon: "target",
+    image: "/services/marketing/marketing1.jpg",
+    description: "At 255, we build marketing strategies that connect the right content with the right audience, through the right channel, at the right time. We focus on creating stronger brand presence, smarter reach, and real results that help brands grow and compete with confidence.",
     deliverables: [
-      "Logo design & brand identity systems",
-      "Packaging design & brand guidelines",
-      "Brand revamps & identity launches"
+      "Marketing Strategy Development",
+      "Advertising Campaign Management",
+      "Market & Competitor Analysis",
+      "Performance Optimization",
+      "Audience Targeting",
+      "Marketing Message Development",
+      "Campaign & Seasonal Planning"
+    ],
+    exampleImages: [
+      "/marketing/marketing1.jpg",
+      "/marketing/marketing2.jpg",
+      "/marketing/marketing3.jpg",
+      "/marketing/marketing4.jpg",
+      "/marketing/marketing5.jpg",
+      "/marketing/marketing6.jpg",
+      "/marketing/marketing7.jpg"
     ]
   },
   {
-    title: "CREATIVE EXECUTION",
-    slug: "creative-execution",
-    icon: "sparkles",
-    image: "/services/creative-execution.png",
-    description: "Bold storytelling and innovative design that captures your brand's essence and builds lasting connections.",
+    title: "Video Production",
+    slug: "video-production",
+    icon: "video",
+    image: "/services/video/video1.jpg",
+    description: "At 255, we turn ideas into videos that capture attention, deliver the message, and create real impact. From concept and scripting to shooting and editing, we produce professional visual content that helps your brand stand out in a stronger and more compelling way.",
     deliverables: [
-      "Graphic design & visual content",
-      "Photography & videography",
-      "Social media content creation"
+      "Commercial & Promotional Video Shooting",
+      "Concept & Script Writing",
+      "Reels & Social Media Video Production",
+      "Video Editing",
+      "Visual Direction",
+      "Brand Introduction Videos",
+      "Event Coverage"
+    ],
+    exampleVideos: [
+      "https://youtu.be/DnxLeOBML5k",
+      "https://youtu.be/1mcNHqrZUfs",
+      "https://youtu.be/OhHfUAelvWo",
+      "https://youtu.be/sOq2Yt83gE0",
+      "https://youtube.com/shorts/_IklSu2ftDQ",
+      "https://youtube.com/shorts/9E-7yCwprn0",
+      "https://youtube.com/shorts/SkkGCyO_ehI"
     ]
   },
   {
-    title: "BRAND ACTIVATIONS",
-    slug: "brand-activations",
-    icon: "zap",
-    image: "/services/brand-activations.png",
-    description: "Impactful campaigns and experiences that engage audiences and create memorable brand moments.",
-    deliverables: [
-      "Campaign strategy & execution",
-      "Experiential marketing events",
-      "Community engagement initiatives"
-    ]
-  },
-  {
-    title: "DIGITAL SOLUTIONS",
-    slug: "digital-solutions",
-    icon: "monitor",
-    image: "/services/digital-solutions.png",
-    description: "Tailored digital marketing using research, innovative tools, and data-driven insights to maximize impact.",
-    deliverables: [
-      "Social media management & advertising",
-      "Digital marketing campaigns",
-      "Analytics & performance optimization"
-    ]
-  },
-  {
-    title: "EVENT COORDINATION",
-    slug: "event-coordination",
+    title: "Events Management",
+    slug: "events-management",
     icon: "calendar",
-    image: "/services/event-coordination.png",
-    description: "End-to-end event planning and execution that brings your brand vision to life with precision and creativity.",
+    image: "/events/event1.png",
+    description: "At 255, we turn ideas into complete event experiences that leave a strong impression and create memorable moments. From planning to execution, we handle every detail to deliver events that reflect your brand identity and present it in the best possible way.",
     deliverables: [
-      "Event planning & logistics",
-      "Production management",
-      "On-site coordination & support"
+      "Event Planning",
+      "Product Launches",
+      "Brand Activations",
+      "On-Ground Execution",
+      "Event Branding",
+      "Promotional Materials"
+    ],
+    exampleImages: [
+      "/events/event1.png",
+      "/events/event2.png",
+      "/events/event3.png",
+      "/events/event4.png",
+      "/events/event5.png",
+      "/events/event6.png",
+      "/events/event7.png"
     ]
   },
+  {
+    title: "AI Content & Video Production",
+    slug: "ai-content-video",
+    icon: "sparkles",
+    image: "/services/ai/ai1.jpg",
+    description: "We use AI tools to create fast, creative, and modern visual content that helps brands stand out across campaigns, social media, and digital platforms.",
+    deliverables: [
+      "AI Content Creation",
+      "AI Video Production",
+      "Visual Concepts",
+      "Creative Scene Generation",
+      "Image Enhancement",
+      "Fast Social Content",
+      "AI Ad Concepts"
+    ],
+    exampleVideos: [
+      "https://www.instagram.com/reel/DQo4tNDjK2T/",
+      "https://www.instagram.com/reel/DQcBTzjDJ7v/",
+      "https://www.instagram.com/reel/DNQaxATtAoH/",
+      "https://www.instagram.com/reel/C7mTPG3IGr9/",
+      "https://www.instagram.com/reel/C7O19LkCS5F/",
+      "https://www.instagram.com/reel/C73dqsZgLdT/",
+      "https://www.instagram.com/p/C9PkNQtoP9C/"
+    ]
+  },
+  {
+    title: "Interior Design & Decoration",
+    slug: "interior-design",
+    icon: "home",
+    image: "/services/interior/interior1.jpg",
+    description: "We design spaces that reflect your brand identity and create a memorable customer experience. At 255, we combine creativity and functionality to deliver modern interior designs that elevate your presence.",
+    deliverables: [
+      "Interior Space Design",
+      "Retail & Office Design",
+      "Color & Material Selection",
+      "In-Store Branding",
+      "Furniture & Lighting Layout",
+      "Execution Supervision"
+    ],
+    exampleImages: [
+      "/int/int1.jpg",
+      "/int/int2.jpg",
+      "/int/int3.jpg",
+      "/int/int4.jpg",
+      "/int/int5.jpg",
+      "/int/int6.jpg",
+      "/int/int7.jpg"
+    ]
+  }
 ];
 
 export const clientsData = [
