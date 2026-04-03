@@ -33,14 +33,14 @@ export default function VideoShowcase() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative max-w-md mx-auto block cursor-pointer group"
+          className="relative w-[267px] mx-auto block cursor-pointer group"
         >
           <div className="relative rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-300 group-hover:scale-105">
             <iframe 
               src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1888213715183095%2F&show_text=false&width=267&t=0" 
               width="267" 
               height="476" 
-              style={{ border: 'none', overflow: 'hidden', width: '100%', height: '476px' }} 
+              style={{ border: 'none', overflow: 'hidden' }} 
               scrolling="no" 
               frameBorder="0" 
               allowFullScreen={true} 
