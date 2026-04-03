@@ -4,14 +4,14 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
 const partners = [
-  { name: "Meta", logo: "/partners/meta.png" },
   { name: "TikTok", logo: "/partners/tiktoklogo.png" },
-  { name: "Snapchat", logo: "/partners/snapchatlogo.jpg" },
-  { name: "X", logo: "/partners/xlogo.png" },
-  { name: "LinkedIn", logo: "/partners/linkedin.avif" },
+  { name: "Snapchat", logo: "/partners/snapchatlogo.png" },
+  { name: "X", logo: "/partners/xlogo1png.png" },
+  { name: "LinkedIn", logo: "/partners/linkedin1.png" },
   { name: "Dropbox", logo: "/partners/dropbox.png" },
   { name: "Monday", logo: "/partners/monday.png" },
-  { name: "Envato", logo: "/partners/envato.png" }
+  { name: "Manychat", logo: "/partners/manychaylogo.png" },
+  { name: "Envato", logo: "/partners/envato1png.png" }
 ]
 
 export default function Partners() {
@@ -43,12 +43,12 @@ export default function Partners() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="flex items-center justify-center hover:scale-110 transition-transform duration-300"
+              className="flex items-center justify-center hover:scale-110 transition-transform duration-300 w-24 h-12"
             >
               <img
                 src={partner.logo}
                 alt={`${partner.name} logo`}
-                className="h-12 w-auto object-contain"
+                className="max-w-full max-h-full w-auto h-auto object-contain"
               />
             </motion.div>
           ))}

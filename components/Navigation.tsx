@@ -118,7 +118,7 @@ export default function Navigation() {
                 <motion.img
                   src="/logobanner.png"
                   alt="255 Agency Logo"
-                  className="h-4 md:h-5 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                  className="h-8 md:h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ 
                     opacity: isScrolled ? 1 : 0,

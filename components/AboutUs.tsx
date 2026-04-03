@@ -148,11 +148,11 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="w-full lg:w-1/2 lg:order-2"
+              className="w-full lg:w-3/5 lg:order-2"
             >
               <div className="w-full aspect-video rounded-xl overflow-hidden shadow-lg">
                 <iframe 
-                  src="https://www.youtube.com/embed/OhHfUAelvWo?autoplay=1&mute=1&loop=1&playlist=OhHfUAelvWo&controls=0&showinfo=0&rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/sOq2Yt83gE0?autoplay=1&mute=1&loop=1&playlist=sOq2Yt83gE0&controls=0&showinfo=0&rel=0&modestbranding=1"
                   className="w-full h-full"
                   style={{ border: 'none' }}
                   allow="autoplay; encrypted-media"
@@ -161,7 +161,7 @@ const AboutUs = () => {
             </motion.div>
 
             {/* Left Side - Stacked Cards */}
-            <div className="w-full lg:w-1/2 lg:order-1 space-y-4">
+            <div className="w-full lg:w-2/5 lg:order-1 space-y-4">
               {/* Speed That Drives Results */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
