@@ -41,13 +41,13 @@ export const servicesData = [
       "Publishing Management"
     ],
     exampleImages: [
-      "/services/social/social1.jpg",
-      "/services/social/social2.jpg",
-      "/services/social/social3.jpg",
-      "/services/social/social4.jpg",
-      "/services/social/social5.jpg",
-      "/services/social/social6.png",
-      "/services/social/social7.jpg"
+      "/services/social/social1.jpeg",
+      "/services/social/social2.jpeg",
+      "/services/social/social3.jpeg",
+      "/services/social/social4.jpeg",
+      "/services/social/social5.jpeg",
+      "/services/social/social6.jpeg",
+      "/services/social/social7.jpeg"
     ]
   },
   {
@@ -91,13 +91,13 @@ export const servicesData = [
       "Print-Ready File Preparation"
     ],
     exampleImages: [
-      "/printables/print1.png",
-      "/printables/print2.png",
-      "/printables/print3.png",
-      "/printables/print4.png",
-      "/printables/print5.png",
-      "/printables/print6.png",
-      "/printables/print7.png"
+      "/printables/print1.jpg",
+      "/printables/print2.jpg",
+      "/printables/print3.jpg",
+      "/printables/print4.jpg",
+      "/printables/print5.jpg",
+      "/printables/print6.jpg",
+      "/printables/print7.jpg"
     ]
   },
   {
@@ -115,13 +115,13 @@ export const servicesData = [
       "Campaign & Seasonal Planning"
     ],
     exampleImages: [
-      "/marketing/marketing1.jpg",
-      "/marketing/marketing2.jpg",
-      "/marketing/marketing3.jpg",
-      "/marketing/marketing4.jpg",
-      "/marketing/marketing5.jpg",
-      "/marketing/marketing6.jpg",
-      "/marketing/marketing7.jpg"
+      "/marketing/camp1.jpeg",
+      "/marketing/camp2.jpeg",
+      "/marketing/camp3.jpeg",
+      "/marketing/camp4.jpeg",
+      "/marketing/camp5.jpeg",
+      "/marketing/camp6.jpeg",
+      "/marketing/camp7.jpeg"
     ]
   },
   {
@@ -188,14 +188,14 @@ export const servicesData = [
       "Fast Social Content",
       "AI Ad Concepts"
     ],
-    exampleVideos: [
-      "https://www.instagram.com/reel/DQo4tNDjK2T/",
-      "https://www.instagram.com/reel/DQcBTzjDJ7v/",
-      "https://www.instagram.com/reel/DNQaxATtAoH/",
-      "https://www.instagram.com/reel/C7mTPG3IGr9/",
-      "https://www.instagram.com/reel/C7O19LkCS5F/",
-      "https://www.instagram.com/reel/C73dqsZgLdT/",
-      "https://www.instagram.com/p/C9PkNQtoP9C/"
+    exampleImages: [
+      "/ai/ai1.jpeg",
+      "/ai/ai2.jpeg",
+      "/ai/ai3.jpeg",
+      "/ai/ai4.jpeg",
+      "/ai/ai5.jpeg",
+      "/ai/ai6.jpeg",
+      "/ai/ai7.jpeg"
     ]
   },
   {
@@ -280,6 +280,17 @@ export const clientsData = [
     ]
   },
   {
+    slug: "chicken-crush",
+    title: "Chicken Crush",
+    description:
+      "Our partnership with Chicken Crush began in 2024, driven by a shared vision to establish a bold presence in Nazareth's competitive food scene through strategic, high-impact advertising. Building on early momentum, we expanded our efforts in late 2025, setting our sights on the growing demand in surrounding areas. To ensure continued growth and measurable results, our 2024 marketing strategy was structured into four distinct quarters, enabling us to execute a comprehensive, budget-conscious plan—primarily fueled by targeted social media advertising",
+    highlights: [
+      "Strategic high-impact advertising for competitive food scene presence",
+      "Quarterly marketing strategy with measurable growth results",
+      "Targeted social media advertising campaigns across multiple regions"
+    ]
+  },
+  {
     slug: "hulk-burger",
     title: "Hulk Burger",
     description:
@@ -299,17 +310,6 @@ export const clientsData = [
       "Global visual identity design reflecting strength and innovation",
       "Comprehensive brand strategy from concept to execution",
       "Cohesive brand identity aligned with international presence"
-    ]
-  },
-  {
-    slug: "chicken-crush",
-    title: "Chicken Crush",
-    description:
-      "Our partnership with Chicken Crush began in 2024, driven by a shared vision to establish a bold presence in Nazareth's competitive food scene through strategic, high-impact advertising. Building on early momentum, we expanded our efforts in late 2025, setting our sights on the growing demand in surrounding areas. To ensure continued growth and measurable results, our 2024 marketing strategy was structured into four distinct quarters, enabling us to execute a comprehensive, budget-conscious plan—primarily fueled by targeted social media advertising",
-    highlights: [
-      "Strategic high-impact advertising for competitive food scene presence",
-      "Quarterly marketing strategy with measurable growth results",
-      "Targeted social media advertising campaigns across multiple regions"
     ]
   },
   {

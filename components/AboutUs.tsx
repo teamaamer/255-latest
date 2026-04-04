@@ -30,40 +30,39 @@ const AboutUs = () => {
 
   return (
     <section ref={ref} id="about" className="py-8 px-6 md:px-12 bg-white">
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 0.8; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.05); }
-        }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .svg-container {
-          transition: transform 0.3s ease;
-        }
-        .svg-container:hover {
-          transform: scale(1.1);
-        }
-        .svg-container svg > *:nth-child(2) {
-          animation: float 3s ease-in-out infinite;
-        }
-        .svg-container svg > *:nth-child(3) {
-          animation: pulse 2s ease-in-out infinite;
-        }
-        .svg-container-rotate svg > *:nth-child(2) {
-          animation: spin-slow 20s linear infinite;
-        }
-        .svg-container-rotate svg > *:nth-child(3) {
-          animation: pulse 3s ease-in-out infinite;
-        }
-      `}</style>
-
       <div className="container mx-auto">
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+          }
+          @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+          }
+          @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          .svg-container {
+            transition: transform 0.3s ease;
+          }
+          .svg-container:hover {
+            transform: scale(1.1);
+          }
+          .svg-container svg > *:nth-child(2) {
+            animation: float 3s ease-in-out infinite;
+          }
+          .svg-container svg > *:nth-child(3) {
+            animation: pulse 2s ease-in-out infinite;
+          }
+          .svg-container-rotate svg > *:nth-child(2) {
+            animation: spin-slow 20s linear infinite;
+          }
+          .svg-container-rotate svg > *:nth-child(3) {
+            animation: pulse 3s ease-in-out infinite;
+          }
+        `}</style>
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -75,27 +74,23 @@ const AboutUs = () => {
         </motion.h2>
 
         {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 mb-16">
-          {/* Left Side - Text Content */}
+        <div className="flex flex-col lg:flex-row gap-24 items-start mb-16 justify-between">
+          {/* Left Side - Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full lg:w-1/2 space-y-6 flex flex-col justify-start"
+            transition={{ duration: 0.6 }}
+            className="w-full lg:w-[40%] space-y-8 flex flex-col justify-start"
           >
-            <p className="text-[#2d2d2d] text-lg leading-relaxed">
-              255 was established in 2020 in Palestine by Sakher Olayaan as a forward-thinking marketing agency built on a foundation of expertise and innovation.
+            <p className="text-[#2d2d2d] text-lg leading-loose">
+              255 was established in 2020 in Palestine by Sakher Olayaan as a forward-thinking marketing agency built on a foundation of expertise and innovation. After achieving strong success within its first two years, the company expanded globally, opening offices in Nazareth and Riyadh, and was officially registered in the United States in 2025.
             </p>
             
-            <p className="text-[#2d2d2d] text-lg leading-relaxed">
-              After achieving strong success within its first two years, the company expanded globally, opening an office in Nazareth, followed by expansion into Saudi Arabia with an office in Riyadh. In 2025, 255 was officially established and registered in the United States, becoming part of a global network of companies serving clients worldwide.
+            <p className="text-[#2d2d2d] text-lg leading-loose">
+              With over 7 years of hands-on experience in marketing, advertising, and promotion, Sakher Olayaan leads a team of 28 skilled professionals delivering impactful campaigns that deeply connect with target audiences.
             </p>
             
-            <p className="text-[#2d2d2d] text-lg leading-relaxed">
-              With over 7 years of hands-on experience in marketing, advertising, and promotion, Sakher Olayaan leads the company with a clear strategic vision and a results-driven approach. Under his leadership, a team of 28 skilled professionals works on delivering impactful marketing campaigns that deeply connect with target audiences.
-            </p>
-            
-            <p className="text-[#2d2d2d] text-lg leading-relaxed">
+            <p className="text-[#2d2d2d] text-lg leading-loose">
               What sets 255 apart is the integration of advanced marketing expertise with over 8 years of experience in direct sales with international companies. This unique combination enables us to build strategies that focus not only on reach and engagement, but on driving real sales and measurable growth.
             </p>
           </motion.div>
@@ -105,9 +100,9 @@ const AboutUs = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-full lg:w-1/2"
+            className="w-full lg:w-[65%] -mr-6 md:-mr-12"
           >
-            <div className="w-full aspect-video rounded-xl shadow-lg overflow-hidden">
+            <div className="w-full aspect-video shadow-lg overflow-hidden">
               <iframe 
                 src="https://www.youtube.com/embed/OhHfUAelvWo?autoplay=1&mute=1&loop=1&playlist=OhHfUAelvWo&controls=0&showinfo=0&rel=0&modestbranding=1"
                 className="w-full h-full"
