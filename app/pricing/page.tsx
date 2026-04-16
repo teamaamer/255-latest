@@ -101,10 +101,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <div className="border-t border-gray-200 pt-6">
-                  <div className="text-gray-600 text-sm mb-2">Starting at</div>
-                  <div className="text-4xl font-bold text-[rgb(255,68,0)] mb-4">$350<span className="text-lg text-gray-600">/month</span></div>
                   <a href="#contact" className="block w-full bg-[rgb(255,68,0)] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center">
-                    Get Started
+                    Contact for Pricing
                   </a>
                 </div>
               </div>
@@ -139,10 +137,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <div className="border-t border-white/10 pt-6">
-                  <div className="text-gray-400 text-sm mb-2">Starting at</div>
-                  <div className="text-4xl font-bold text-[rgb(255,68,0)] mb-4">$550<span className="text-lg text-gray-400">/month</span></div>
                   <a href="#contact" className="block w-full bg-[rgb(255,68,0)] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center">
-                    Get Started
+                    Contact for Pricing
                   </a>
                 </div>
               </div>
@@ -281,10 +277,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <div className="border-t border-gray-200 pt-6">
-                  <div className="text-gray-600 text-sm mb-2">Starting at</div>
-                  <div className="text-4xl font-bold text-[rgb(255,68,0)] mb-4">$800<span className="text-lg text-gray-600">/month</span></div>
                   <a href="#contact" className="block w-full bg-[rgb(255,68,0)] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center">
-                    Get Started
+                    Contact for Pricing
                   </a>
                 </div>
               </div>
@@ -325,10 +319,8 @@ export default function PricingPage() {
                   </li>
                 </ul>
                 <div className="border-t border-white/10 pt-6">
-                  <div className="text-gray-400 text-sm mb-2">Starting at</div>
-                  <div className="text-4xl font-bold text-[rgb(255,68,0)] mb-4">$1,200<span className="text-lg text-gray-400">/month</span></div>
                   <a href="#contact" className="block w-full bg-[rgb(255,68,0)] text-white py-3 rounded-full font-semibold hover:bg-[#ff5515] transition-colors text-center">
-                    Contact Sales
+                    Contact for Pricing
                   </a>
                 </div>
               </div>

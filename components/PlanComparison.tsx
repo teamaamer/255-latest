@@ -147,11 +147,7 @@ export default function PlanComparison() {
                   <th className="text-left p-4 font-bold text-lg">Feature</th>
                   {selectedPlanData.map((plan) => (
                     <th key={plan.name} className="p-4 text-center">
-                      <div className="font-bold text-xl mb-2">{plan.name}</div>
-                      <div className="text-[rgb(255,68,0)] text-2xl font-bold">
-                        {plan.price}
-                        <span className="text-sm text-gray-600">/mo</span>
-                      </div>
+                      <div className="font-bold text-xl">{plan.name}</div>
                     </th>
                   ))}
                 </tr>

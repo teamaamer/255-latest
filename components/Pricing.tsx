@@ -93,18 +93,7 @@ export default function Pricing() {
                 </span>
               </div>
 
-              {/* Price - Horizontal Layout */}
-              <div className="mb-6 text-center">
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-gray-400 text-sm">From</span>
-                  <span className="text-[rgb(255,68,0)] text-4xl font-bold">
-                    {plan.price}$
-                  </span>
-                  <span className="text-gray-400 text-sm">
-                    {plan.period}
-                  </span>
-                </div>
-              </div>
+              {/* Price removed - Contact for pricing */}
 
               {/* Features Card with White Border */}
               <div className="bg-transparent border-2 border-white rounded-3xl p-6 flex-1 flex flex-col mb-6">
