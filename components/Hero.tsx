@@ -15,38 +15,32 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <motion.div
-        initial={{ scale: 1.6, filter: "brightness(0.9)" }}
-        animate={{ scale: 1, filter: "brightness(0.9)" }}
+        initial={{ scale: 1.6 }}
+        animate={{ scale: 1 }}
         transition={{ duration: 2, ease: [0.44, 0, 0.56, 1] }}
         className="absolute inset-0 z-0"
       >
-        <Image
-          src="/images/herosection-bg.png"
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/websitehero.mp4" type="video/mp4" />
+        </video>
       </motion.div>
+
+      {/* White Fade Overlay at Top */}
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white/30 to-transparent z-5 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 w-full h-full flex items-center">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl">
-            {/* Headline */}
-            <motion.div
-              initial={{ opacity: 0.001, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              style={{ y: headlineY, opacity: headlineOpacity }}
-              transition={{ duration: 1.5, ease: [0.44, 0, 0.56, 1] }}
-            >
-              <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
-                Creative solutions<br />
-                that inspire and engage.
-              </h1>
-            </motion.div>
+            {/* Headline removed */}
           </div>
         </div>
 

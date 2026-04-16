@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navigation from "@/components/Navigation";
@@ -44,6 +45,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={madaniArabic.variable}>
       <body className={`${madaniArabic.className} ${madaniArabic.variable} antialiased`}>
+        {/* Metricool Tracking Script */}
+        <Script
+          id="metricool-tracker"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d5f02c39820817a025aa1d1706bd2f17"})});
+            `,
+          }}
+        />
+        
         <Preloader />
         <SmoothScroll />
         <Navigation />
