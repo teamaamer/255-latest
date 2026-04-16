@@ -33,9 +33,6 @@ export default function Hero() {
         </video>
       </motion.div>
 
-      {/* White Fade Overlay at Top */}
-      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white/30 to-transparent z-5 pointer-events-none" />
-
       {/* Content */}
       <div className="relative z-10 w-full h-full flex items-center">
         <div className="container mx-auto px-6 md:px-12">
