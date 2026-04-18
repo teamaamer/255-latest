@@ -45,6 +45,24 @@ export default function RootLayout({
   return (
     <html lang="en" className={madaniArabic.variable}>
       <body className={`${madaniArabic.className} ${madaniArabic.variable} antialiased`}>
+        {/* Google Ads Global Site Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18070811914"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-ads-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18070811914');
+            `,
+          }}
+        />
+
         {/* Metricool Tracking Script */}
         <Script
           id="metricool-tracker"
