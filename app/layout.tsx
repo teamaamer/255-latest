@@ -62,6 +62,27 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="google-ads-conversion-helper"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Helper function to delay opening a URL until a gtag event is sent.
+              function gtagSendEvent(url) {
+                var callback = function () {
+                  if (typeof url === 'string') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'ads_conversion_Contact_Us_1', {
+                  'event_callback': callback,
+                  'event_timeout': 2000,
+                });
+                return false;
+              }
+            `,
+          }}
+        />
 
         {/* Metricool Tracking Script */}
         <Script

@@ -9,6 +9,19 @@ export default function VideoShowcase() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
+  const handleCalendlyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const calendlyUrl = "https://calendly.com/sakher-255adv/30min"
+    
+    // Track conversion
+    if (typeof window !== 'undefined' && (window as any).gtagSendEvent) {
+      (window as any).gtagSendEvent(calendlyUrl)
+    } else {
+      // Fallback if gtag not loaded
+      window.open(calendlyUrl, '_blank')
+    }
+  }
+
   const expertiseAreas = [
     { icon: Lightbulb, title: "Social Media & Content Strategy" },
     { icon: TrendingUp, title: "Marketing & Business Growth" },
@@ -98,6 +111,7 @@ export default function VideoShowcase() {
             {/* CTA Button */}
             <motion.a
               href="https://calendly.com/sakher-255adv/30min"
+              onClick={handleCalendlyClick}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

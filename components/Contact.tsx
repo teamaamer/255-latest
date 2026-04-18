@@ -19,6 +19,14 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Form submitted:", formData)
+    
+    // Track conversion on successful form submission
+    if (typeof window !== 'undefined' && (window as any).gtagSendEvent) {
+      (window as any).gtagSendEvent()
+    }
+    
+    // Here you would normally send the form data to your backend
+    // For now, just logging and tracking the conversion
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

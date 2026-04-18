@@ -6,9 +6,22 @@ export default function WhatsAppFloat() {
   const phoneNumber = "972566255255" // Format: country code + number without spaces/dashes
   const whatsappUrl = `https://wa.me/${phoneNumber}`
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    
+    // Track conversion
+    if (typeof window !== 'undefined' && (window as any).gtagSendEvent) {
+      (window as any).gtagSendEvent(whatsappUrl)
+    } else {
+      // Fallback if gtag not loaded
+      window.open(whatsappUrl, '_blank')
+    }
+  }
+
   return (
     <motion.a
       href={whatsappUrl}
+      onClick={handleClick}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white rounded-full p-4 shadow-2xl hover:bg-[#20BA5A] transition-colors"
