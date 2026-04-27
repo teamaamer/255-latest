@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     description: "Premium creative agency for strategic design and digital marketing",
     images: ["/og-image.jpg"],
   },
+  other: {
+    "facebook-domain-verification": ["5q30ifb006fm82kqhs2f96nr46tjrp", "zhd6lzytrvacofugyftyyanqngx3ys"],
+  },
 };
 
 export default function RootLayout({
