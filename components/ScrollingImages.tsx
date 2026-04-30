@@ -43,6 +43,9 @@ export default function ScrollingImages() {
                 alt={pair.alt1}
                 fill
                 className="object-cover"
+                loading="lazy"
+                quality={80}
+                sizes="(max-width: 768px) 180px, (max-width: 1024px) 250px, 350px"
               />
             </motion.div>
             <motion.div
@@ -54,6 +57,9 @@ export default function ScrollingImages() {
                 alt={pair.alt2}
                 fill
                 className="object-cover"
+                loading="lazy"
+                quality={80}
+                sizes="(max-width: 768px) 180px, (max-width: 1024px) 250px, 350px"
               />
             </motion.div>
           </div>

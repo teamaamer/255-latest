@@ -245,7 +245,8 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
                             fill
                             sizes="(max-width: 1024px) 30vw, 220px"
                             className="object-cover"
-                            priority={idx < 2}
+                            loading={idx < 2 ? "eager" : "lazy"}
+                            quality={85}
                           />
                         </div>
                       ))}

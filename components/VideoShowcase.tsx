@@ -139,6 +139,8 @@ export default function VideoShowcase() {
                 width={800}
                 height={1000}
                 className="w-full h-auto object-cover"
+                loading="lazy"
+                quality={85}
               />
             </div>
           </motion.div>

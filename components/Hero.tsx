@@ -27,7 +27,9 @@ export default function Hero() {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ willChange: 'transform' }}
         >
           <source src="/videos/websitehero.mp4" type="video/mp4" />
         </video>

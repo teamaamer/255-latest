@@ -22,6 +22,8 @@ const madaniArabic = localFont({
   ],
   display: "swap",
   variable: "--font-madani-arabic",
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 export const metadata: Metadata = {

@@ -99,6 +99,7 @@ export default function PortfolioPage() {
                   src={item.src}
                   alt={`${item.service} work`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-full">

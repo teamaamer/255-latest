@@ -30,6 +30,8 @@ export default function PortfolioDetailContent({ clientTitle, images }: Portfoli
                   width={800}
                   height={600}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading={i < 3 ? "eager" : "lazy"}
+                  quality={85}
                 />
               </button>
             ))}
