@@ -13,27 +13,52 @@ export default function Hero() {
   const headlineY = useTransform(scrollY, [0, 300], [0, -200]);
   const headlineOpacity = useTransform(scrollY, [0, 200], [1, 0]);
 
+  // Detect if mobile for performance
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
-      <motion.div
-        initial={{ scale: 1.6 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2, ease: [0.44, 0, 0.56, 1] }}
-        className="absolute inset-0 z-0"
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ willChange: 'transform' }}
-        >
-          <source src="/videos/websitehero.mp4" type="video/mp4" />
-        </video>
-      </motion.div>
+      {/* Background Video or Image */}
+      <div className="absolute inset-0 z-0">
+        {isMobile ? (
+          // Use static image on mobile for better performance
+          <Image
+            src="/images/herosection-bg.png"
+            alt="Hero background"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center center' }}
+            priority
+            quality={90}
+          />
+        ) : (
+          // Use video on desktop
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/images/herosection-bg.png"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ 
+              objectPosition: 'center center',
+              transform: 'scale(1)',
+            }}
+          >
+            <source src="/videos/websitehero.mp4" type="video/mp4" />
+          </video>
+        )}
+      </div>
 
       {/* Content */}
       <div className="relative z-10 w-full h-full flex items-center">
