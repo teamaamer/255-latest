@@ -25,39 +25,30 @@ export default function Hero() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Hide hero section completely on mobile for faster loading
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video or Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        {isMobile ? (
-          // Use static image on mobile for better performance
-          <Image
-            src="/images/herosection-bg.png"
-            alt="Hero background"
-            fill
-            className="object-cover"
-            style={{ objectPosition: 'center center' }}
-            priority
-            quality={90}
-          />
-        ) : (
-          // Use video on desktop
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            poster="/images/herosection-bg.png"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ 
-              objectPosition: 'center center',
-              transform: 'scale(1)',
-            }}
-          >
-            <source src="/videos/websitehero.mp4" type="video/mp4" />
-          </video>
-        )}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/images/herosection-bg.png"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ 
+            objectPosition: 'center center',
+            transform: 'scale(1)',
+          }}
+        >
+          <source src="/videos/websitehero.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Content */}
