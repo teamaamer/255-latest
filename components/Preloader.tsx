@@ -8,7 +8,7 @@ interface PreloaderProps {
   delay?: number
 }
 
-export default function Preloader({ duration = 2.5, delay = 0 }: PreloaderProps) {
+export default function Preloader({ duration = 1, delay = 0 }: PreloaderProps) {
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function Preloader({ duration = 2.5, delay = 0 }: PreloaderProps)
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.44, 0, 0.56, 1] }}
+          transition={{ duration: 0.3, ease: [0.44, 0, 0.56, 1] }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
         >
           <div className="flex flex-col items-center gap-8">
@@ -48,7 +48,7 @@ export default function Preloader({ duration = 2.5, delay = 0 }: PreloaderProps)
               alt="255 Agency"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
               className="h-10 md:h-14 w-auto brightness-0 invert"
             />
 

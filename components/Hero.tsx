@@ -15,8 +15,10 @@ export default function Hero() {
 
   // Detect if mobile for performance
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -25,30 +27,45 @@ export default function Hero() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Hide hero section completely on mobile for faster loading
-  if (isMobile) {
+  // Don't render until mounted to prevent hydration issues
+  if (!mounted) {
     return null;
   }
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background - Mobile Image or Desktop Video */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="/images/herosection-bg.png"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ 
-            objectPosition: 'center center',
-            transform: 'scale(1)',
-          }}
-        >
-          <source src="/videos/websitehero.mp4" type="video/mp4" />
-        </video>
+        {isMobile ? (
+          // Mobile: Fast-loading static image
+          <Image
+            src="/heromobile.png"
+            alt="255 Agency"
+            fill
+            priority
+            quality={95}
+            className="object-cover"
+            style={{ objectPosition: 'center center' }}
+            sizes="100vw"
+          />
+        ) : (
+          // Desktop: Video
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/images/herosection-bg.png"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ 
+              objectPosition: 'center center',
+              transform: 'scale(1)',
+            }}
+          >
+            <source src="/videos/websitehero.mp4" type="video/mp4" />
+          </video>
+        )}
       </div>
 
       {/* Content */}
@@ -58,7 +75,6 @@ export default function Hero() {
             {/* Headline removed */}
           </div>
         </div>
-
       </div>
     </section>
   )

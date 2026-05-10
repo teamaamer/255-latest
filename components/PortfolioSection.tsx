@@ -47,11 +47,11 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const toGridNine = (images: string[]) => {
-    const safe = images.filter(Boolean).slice(0, 9) // Only use first 9 images
+  const toGridSix = (images: string[]) => {
+    const safe = images.filter(Boolean).slice(0, 6) // Only use first 6 images
     if (safe.length === 0) return [] as string[]
     const out: string[] = []
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 6; i++) {
       out.push(safe[i % safe.length])
     }
     return out
@@ -231,10 +231,10 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
                     </Link>
                   </div>
 
-                  {/* Right: 3x3 portfolio grid */}
+                  {/* Right: 2x3 portfolio grid */}
                   <div className="scale-[0.9] origin-top-left">
-                    <div className="grid grid-cols-3 gap-2">
-                      {toGridNine(slides[currentIndex]?.images || []).map((src, idx) => (
+                    <div className="grid grid-cols-2 gap-2">
+                      {toGridSix(slides[currentIndex]?.images || []).map((src, idx) => (
                         <div
                           key={`${slides[currentIndex]?.slug}-${idx}`}
                           className="relative aspect-square overflow-hidden rounded-xl bg-black/20 border border-white/10"

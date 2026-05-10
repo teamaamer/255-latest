@@ -31,7 +31,7 @@ export default async function Home() {
       images = files
         .filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
         .sort()
-        .slice(0, 9) // Only take first 9 images
+        .slice(0, 6) // Only take first 6 images for better mobile performance
         .map(file => `/portfolio/${client.slug}/${file}`);
     } catch (error) {
       console.error(`Error reading portfolio folder for ${client.slug}:`, error);
