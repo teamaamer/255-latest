@@ -93,7 +93,7 @@ export default function Navigation() {
   return (
     <>
       {/* Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-2 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : ''}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-5 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md shadow-lg' : ''}`}>
         <div className="flex items-center">
           {/* Left Social Links */}
           <div className="hidden md:flex items-center gap-6 flex-1">
@@ -112,7 +112,7 @@ export default function Navigation() {
           </div>
 
           {/* Center Logo Banner */}
-          <div className="flex-auto relative">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex justify-center">
               <Link href="/">
                 <motion.img

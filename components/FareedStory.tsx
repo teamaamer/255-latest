@@ -58,7 +58,7 @@ export default function FareedStory() {
   }, [currentIndex])
 
   return (
-    <section ref={ref} className="py-16 pb-4 px-6 md:px-12 bg-[#2d2d2d]">
+    <section ref={ref} className="py-16 pb-4 px-6 md:px-12 bg-[#2d2d2d] overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -106,7 +106,7 @@ export default function FareedStory() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-3 shadow-lg transition-colors z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-12 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-3 shadow-lg transition-colors z-10"
             aria-label="Previous story"
           >
             <ChevronLeft size={24} />
@@ -114,7 +114,7 @@ export default function FareedStory() {
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-3 shadow-lg transition-colors z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-12 bg-white hover:bg-gray-100 text-gray-800 rounded-full p-3 shadow-lg transition-colors z-10"
             aria-label="Next story"
           >
             <ChevronRight size={24} />

@@ -53,16 +53,48 @@ export default function ClientStories() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [cardWidth, setCardWidth] = useState(0)
+  const [perPage, setPerPage] = useState(1)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const update = () => {
+      if (!containerRef.current) return
+      const w = containerRef.current.offsetWidth
+      const pp = window.innerWidth >= 768 ? 3 : 1
+      setPerPage(pp)
+      const gap = pp === 3 ? 32 : 0
+      setCardWidth((w - gap * (pp - 1)) / pp)
+    }
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
+
+  const maxIndex = testimonials.length - perPage
+
+  const goTo = (index: number) => {
+    setCurrentIndex(Math.max(0, Math.min(index, maxIndex)))
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
     }, 4000)
     return () => clearInterval(interval)
-  }, [])
+  }, [maxIndex])
+
+  const gap = perPage === 3 ? 32 : 0
+  const offset = currentIndex * (cardWidth + gap)
+
+  const handleDragEnd = (_: any, info: any) => {
+    if (info.offset.x < -50) goTo(currentIndex + 1)
+    else if (info.offset.x > 50) goTo(currentIndex - 1)
+  }
 
   return (
-    <section ref={ref} id="client-stories" className="py-16 px-6 md:px-12 bg-[#2d2d2d]">
+    <section ref={ref} id="client-stories" className="py-16 px-6 md:px-12 bg-[#2d2d2d] overflow-hidden">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +102,7 @@ export default function ClientStories() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
             <h2 className="text-5xl md:text-7xl font-bold text-white">
               Google Reviews
             </h2>
@@ -89,21 +121,28 @@ export default function ClientStories() {
           </div>
         </motion.div>
 
-        {/* Auto-scrolling Reviews Carousel */}
-        <div className="relative overflow-hidden">
+        {/* Swipeable Reviews Carousel */}
+        <div ref={containerRef} className="relative overflow-hidden">
           <motion.div
-            className="flex gap-8 transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${currentIndex * (100 / 3)}%)`
-            }}
+            ref={trackRef}
+            className="flex"
+            style={{ gap }}
+            animate={{ x: -offset }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.1}
+            onDragEnd={handleDragEnd}
+            whileTap={{ cursor: 'grabbing' }}
           >
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                transition={{ duration: 0.6, delay: (index % testimonials.length) * 0.15 }}
-                className="bg-white rounded-2xl p-8 shadow-sm flex-shrink-0 w-full md:w-[calc(33.333%-1.5rem)]"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-sm flex-shrink-0"
+                style={{ width: cardWidth || '100%' }}
               >
                 <div className="flex items-center gap-2 mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -134,6 +173,18 @@ export default function ClientStories() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 mt-6">
+          {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goTo(idx)}
+              className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-[#ff5a1f]' : 'w-2 bg-gray-500'}`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
 
         {/* See More Reviews Link */}

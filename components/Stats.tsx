@@ -50,7 +50,7 @@ export default function Stats() {
           PERFORMANCE SNAPSHOT
         </motion.h3>
         
-        <div className="flex flex-col md:flex-row items-center justify-center divide-y md:divide-y-0 md:divide-x divide-white/20">
+        <div className="grid grid-cols-2 md:flex md:flex-row items-center justify-center md:divide-x md:divide-white/20">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -58,7 +58,13 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`flex-1 text-center py-8 md:py-0 md:px-8 lg:px-16 ${index === 2 ? 'md:ml-8' : ''}`}
+              className={`
+                text-center py-8 md:py-0 md:px-8 lg:px-16 md:flex-1
+                ${index === 4 ? 'col-span-2 border-t border-white/20 md:border-t-0' : ''}
+                ${[2, 3].includes(index) ? 'border-t border-white/20 md:border-t-0' : ''}
+                ${[0, 2].includes(index) ? 'border-r border-white/20 md:border-r-0' : ''}
+                ${index === 2 ? 'md:ml-8' : ''}
+              `}
             >
               <div 
                 className="text-[10px] md:text-[12px] text-white/60 mb-2 whitespace-pre-line uppercase font-[400]"

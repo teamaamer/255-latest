@@ -33,9 +33,17 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{ height: '100dvh', maxHeight: '100dvh' }}
+    >
+      {/* Orange top bar - mobile only */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#ff4400] z-20 md:hidden" />
+      {/* Orange bottom bar - mobile only */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#ff4400] z-20 md:hidden" />
       {/* Background - Mobile Image or Desktop Video */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-[#d45a14]">
         {isMobile ? (
           // Mobile: Fast-loading static image
           <Image
@@ -44,8 +52,8 @@ export default function Hero() {
             fill
             priority
             quality={95}
-            className="object-cover"
-            style={{ objectPosition: 'center center' }}
+            className="object-contain scale-110"
+            style={{ objectPosition: 'right center' }}
             sizes="100vw"
           />
         ) : (
@@ -57,10 +65,15 @@ export default function Hero() {
             playsInline
             preload="metadata"
             poster="/images/herosection-bg.png"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ 
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
               objectPosition: 'center center',
-              transform: 'scale(1)',
+              display: 'block',
             }}
           >
             <source src="/videos/websitehero.mp4" type="video/mp4" />

@@ -60,7 +60,7 @@ export default function Services() {
                     initial={{ opacity: 0, x: isEven ? -30 : 30 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -30 : 30 }}
                     transition={{ duration: 0.6, delay: serviceIndex * 0.1 + 0.2 }}
-                    className={`flex-shrink-0 w-[400px] h-[400px] rounded-[20px] overflow-hidden relative group cursor-pointer shadow-xl p-6 ${isEven ? 'bg-gradient-to-br from-orange-500 to-orange-600' : 'bg-[#2d2d2d]'}`}
+                    className={`flex-shrink-0 w-full max-w-[400px] h-[400px] rounded-[20px] overflow-hidden relative group cursor-pointer shadow-xl p-6 ${isEven ? 'bg-gradient-to-br from-orange-500 to-orange-600' : 'bg-[#2d2d2d]'}`}
                   >
                     <div className="flex flex-col h-full justify-center">
                       <h4 className="text-white text-xl md:text-2xl font-bold mb-6">Including:</h4>

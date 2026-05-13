@@ -95,7 +95,7 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
   }, [currentIndex, isPaused, slides.length])
 
   return (
-    <section ref={ref} id="portfolio" className="py-8 px-6 md:px-12 bg-[#1a1a1a]">
+    <section ref={ref} id="portfolio" className="py-8 px-6 md:px-12 bg-[#1a1a1a] overflow-hidden">
       <div className="container mx-auto">
         {/* Header */}
         <div className="mb-20">
@@ -152,7 +152,7 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
           <button
             type="button"
             onClick={() => goTo(currentIndex - 1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 transition-colors flex items-center justify-center backdrop-blur-sm"
+            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-6 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 transition-colors flex items-center justify-center backdrop-blur-sm"
             aria-label="Previous project"
           >
             <ChevronLeft className="text-white" size={24} />
@@ -162,7 +162,7 @@ export default function PortfolioSection({ slides }: { slides: PortfolioSlide[] 
           <button
             type="button"
             onClick={() => goTo(currentIndex + 1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 transition-colors flex items-center justify-center backdrop-blur-sm"
+            className="absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-6 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 transition-colors flex items-center justify-center backdrop-blur-sm"
             aria-label="Next project"
           >
             <ChevronRight className="text-white" size={24} />

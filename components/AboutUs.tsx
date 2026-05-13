@@ -100,7 +100,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-full lg:w-[65%] -mr-6 md:-mr-12"
+            className="w-full lg:w-[65%]"
           >
             <div className="w-full aspect-video shadow-lg overflow-hidden">
               <iframe 
@@ -113,7 +113,7 @@ const AboutUs = () => {
           </motion.div>
         </div>
         {/* Our Approach */}
-        <div className="mb-0 py-16 relative overflow-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+        <div className="mb-0 py-16 relative overflow-hidden -mx-6 md:-mx-12">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
